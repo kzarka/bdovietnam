@@ -1,6 +1,6 @@
 @extends('layouts.max-width')
 
-@section('title', 'Home Page')
+@section('title', 'Classes')
 
 @section('content')
 <!-- Start Classes Area -->
@@ -8,22 +8,22 @@
     <div class="inner_class"><!-- 각성일 경우 normal 제거 -->
         <h3 class="screen_out">CLASSES</h3>
         <ul class="list_class obj scroll_on">
-            <li class="on"><a href="javascript:;" class="link_class link_darkknight" data-combat="78gi1U4Fb7w" data-combat-awake="GmDzng0xwcU">Dark knight</a></li>
-            <li><a href="javascript:;" class="link_class link_striker" data-combat="YAuKd_d5UDM" data-combat-awake="hpg4Ax5RUjE">Striker</a></li>
-            <li><a href="javascript:;" class="link_class link_mystic" data-combat="wrpdwBtIOus" data-combat-awake="D6CM6yPzxAw">Mystic</a></li>
-            <li><a href="javascript:;" class="link_class link_warrior" data-combat="gGu3RAHFqHw" data-combat-awake="F-dfn8CZKFg">Warrior</a></li>
-            <li><a href="javascript:;" class="link_class link_sorceress" data-combat="XJmt0LKXyEo" data-combat-awake="qvpxOiDrekI">Sorceress</a></li>
-            <li><a href="javascript:;" class="link_class link_ranger" data-combat="ZiEDwnjgYd4" data-combat-awake="tkbn4cV3GFI">Ranger</a></li>
-            <li><a href="javascript:;" class="link_class link_berserker" data-combat="cq0rkfAHz-I" data-combat-awake="nTaqLVUYTuM">Berserker</a></li>
-            <li><a href="javascript:;" class="link_class link_tamer" data-combat="_Q82yVYegyg" data-combat-awake="Fmj8X0RWHng">Tamer</a></li>
-            <li><a href="javascript:;" class="link_class link_ninja" data-combat="OMV55i9Gs3k" data-combat-awake="_TVsOfilA1E">Ninja</a></li>
-            <li><a href="javascript:;" class="link_class link_musa" data-combat="RwSkD7q8DdA" data-combat-awake="IqSlg2FlxaI">Musa</a></li>
-            <li><a href="javascript:;" class="link_class link_maehwa" data-combat="79iyR7Yl3L0" data-combat-awake="xaffFaelW5I">Maehwa</a></li>
-            <li><a href="javascript:;" class="link_class link_valkyrie" data-combat="CPIwU5qw7Po" data-combat-awake="86ioPn4rFko">Valkyrie</a></li>
-            <li><a href="javascript:;" class="link_class link_wizard" data-combat="jOSp0nVfQ68" data-combat-awake="M2qmPbQRnrY">Wizard</a></li>
-            <li><a href="javascript:;" class="link_class link_witch" data-combat="jOSp0nVfQ68" data-combat-awake="dbxB5lyCLFg">Witch</a></li>
-            <li><a href="javascript:;" class="link_class link_kunoichi" data-combat="pwOaKKwzxa0" data-combat-awake="BvN3AzI3GeA">Kunoichi</a></li>
-            <li><a href="javascript:;" class="link_class link_lahn" data-combat="hKXpIntzoMU" data-combat-awake="l5ZPl_22v0w">Lahn</a></li>
+            <li class="on"><a href="javascript:;" class="link_class link_darkknight" data-class="darkknight">Dark knight</a></li>
+            <li><a href="javascript:;" class="link_class link_striker" data-class="striker">Striker</a></li>
+            <li><a href="javascript:;" class="link_class link_mystic" data-class="mystic">Mystic</a></li>
+            <li><a href="javascript:;" class="link_class link_warrior" data-class="warrior">Warrior</a></li>
+            <li><a href="javascript:;" class="link_class link_sorceress" data-class="sorceress">Sorceress</a></li>
+            <li><a href="javascript:;" class="link_class link_ranger" data-class="ranger">Ranger</a></li>
+            <li><a href="javascript:;" class="link_class link_berserker" data-class="berserker">Berserker</a></li>
+            <li><a href="javascript:;" class="link_class link_tamer" data-class="tamer">Tamer</a></li>
+            <li><a href="javascript:;" class="link_class link_ninja" data-class="ninja">Ninja</a></li>
+            <li><a href="javascript:;" class="link_class link_musa" data-class="musa">Musa</a></li>
+            <li><a href="javascript:;" class="link_class link_maehwa" data-class="maehwa">Maehwa</a></li>
+            <li><a href="javascript:;" class="link_class link_valkyrie" data-class="valkyrie">Valkyrie</a></li>
+            <li><a href="javascript:;" class="link_class link_wizard" data-class="wizard">Wizard</a></li>
+            <li><a href="javascript:;" class="link_class link_witch" data-class="witch">Witch</a></li>
+            <li><a href="javascript:;" class="link_class link_kunoichi" data-class="kunoichi">Kunoichi</a></li>
+            <li><a href="javascript:;" class="link_class link_lahn" data-class="lahn">Lahn</a></li>
         </ul>
         <div class="info_class">
             <div class="detail_class detail_darkknight"><!-- 각성시 awake 클래스 추가 -->
@@ -296,3 +296,7 @@
 <div class="tit_article"></div>
 @endsection
 
+
+@section('js')
+    <script src="{{ asset('js/classes.js') }}"></script>
+@endsection
