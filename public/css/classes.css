@@ -1,0 +1,228 @@
+/* TOP MAIN (cMain) */
+.tit_article{padding-bottom:23px;font-size:40px;color:#181a1f;background:url(https://akamai-webcdn.kgstatic.net/renewal/static/images/line_title_type1.png) 50% 100% no-repeat;text-align:center}
+
+/* global */
+#kakaoIndex{overflow:hidden;position:absolute;left:-9999px;width:0;height:1px;margin:0;padding:0}
+.ir_pm{display:block;overflow:hidden;font-size:0;line-height:0;text-indent:-9999px}
+.ir_wa{display:block;overflow:hidden;position:relative;z-index:-1;width:100%;height:100%}
+.ir_caption{overflow:hidden;width:1px;font-size:1px;line-height:0;text-indent:-9999px}
+.screen_out{overflow:hidden;position:absolute;width:0;height:0;line-height:0;text-indent:-9999px}
+.show{display:block}
+.hide{display:none}
+
+/* CLASS */
+.black_class{padding-top: 62px; overflow:hidden;background-size:cover;background-position: 50% 50%;background-repeat: no-repeat;}
+.black_class .inner_class{position:relative;width:1200px;margin:0 auto;padding:54px 40px 620px}
+.black_class .list_class{position:absolute;left:28px;bottom:193px;z-index:20;width:544px}
+.list_class li{float:left;padding:4px}
+.list_class .link_class{display:block;width:96px;height:96px;background:url(https://akamai-webcdn.kgstatic.net/renewal/static/images/class/img_class_180522.png) 0 0 no-repeat;text-indent:-9999px}
+.list_class .link_darkknight{background-position:0 0}
+.list_class .link_striker{background-position:-100px 0}
+.list_class .link_mystic{background-position:-200px 0}
+.list_class .link_warrior{background-position:-300px 0}
+.list_class .link_sorceress{background-position:-400px 0}
+.list_class .link_ranger{background-position:0 -100px}
+.list_class .link_berserker{background-position:-100px -100px}
+.list_class .link_tamer{background-position:-200px -100px}
+.list_class .link_ninja{background-position:-300px -100px}
+.list_class .link_musa{background-position:-400px -100px}
+.list_class .link_maehwa{background-position:0 -200px}
+.list_class .link_valkyrie{background-position:-100px -200px}
+.list_class .link_wizard{background-position:-200px -200px}
+.list_class .link_witch{background-position:-300px -200px}
+.list_class .link_kunoichi{background-position:-400px -200px}
+.list_class .link_lahn{background-position:0 -300px}
+
+.list_class .link_darkknight:hover, .list_class .on .link_darkknight{background-position:-500px 0}
+.list_class .link_striker:hover, .list_class .on .link_striker{background-position:-600px 0}
+.list_class .link_mystic:hover, .list_class .on .link_mystic{background-position:-700px 0}
+.list_class .link_warrior:hover, .list_class .on .link_warrior{background-position:-800px 0}
+.list_class .link_sorceress:hover, .list_class .on .link_sorceress{background-position:-900px 0}
+.list_class .link_ranger:hover, .list_class .on .link_ranger{background-position:-500px -100px}
+.list_class .link_berserker:hover, .list_class .on .link_berserker{background-position:-600px -100px}
+.list_class .link_tamer:hover, .list_class .on .link_tamer{background-position:-700px -100px}
+.list_class .link_ninja:hover, .list_class .on .link_ninja{background-position:-800px -100px}
+.list_class .link_musa:hover, .list_class .on .link_musa{background-position:-900px -100px}
+.list_class .link_maehwa:hover, .list_class .on .link_maehwa{background-position:-500px -200px}
+.list_class .link_valkyrie:hover, .list_class .on .link_valkyrie{background-position:-600px -200px}
+.list_class .link_wizard:hover, .list_class .on .link_wizard{background-position:-700px -200px}
+.list_class .link_witch:hover, .list_class .on .link_witch{background-position:-800px -200px}
+.list_class .link_kunoichi:hover, .list_class .on .link_kunoichi{background-position:-900px -200px}
+.list_class .link_lahn:hover, .list_class .on .link_lahn{background-position:-500px -300px}
+
+.detail_class .tit_class{position:relative;z-index:10;padding-left:103px;font-size:60px;color:#000}
+.detail_class .txt_awake{display:none;height:34px;margin:27px 0 0 20px;padding:0 23px;border:1px solid #cb413e;font-size:20px;line-height:34px;color:#cb413e;vertical-align:top}
+.awake .txt_awake{display:inline-block}
+.detail_class .ico_mark{position:absolute;background:url(https://akamai-webcdn.kgstatic.net/renewal/static/images/class/ico_mark_180522.png) 0 0 no-repeat}
+.detail_darkknight .ico_mark{top:1px;left:-6px;width:85px;height:87px;background-position:0 0}
+.detail_striker .ico_mark{top:7px;left:0;width:75px;height:75px;background-position:-90px 0}
+.detail_mystic .ico_mark{top:10px;left:3px;width:70px;height:70px;background-position:-170px 0}
+.detail_warrior .ico_mark{top:2px;left:0;width:78px;height:83px;background-position:-250px 0}
+.detail_sorceress .ico_mark{top:1px;left:-9px;width:86px;height:87px;background-position:-330px 0}
+.detail_ranger .ico_mark{top:8px;left:-2px;width:85px;height:74px;background-position:0 -90px}
+.detail_berserker .ico_mark{top:12px;left:3px;width:68px;height:66px;background-position:-90px -90px}
+.detail_tamer .ico_mark{top:4px;left:0;width:74px;height:80px;background-position:-160px -90px}
+.detail_ninja .ico_mark{top:7px;left:1px;width:76px;height:88px;background-position:-240px -90px}
+.detail_musa .ico_mark{top:9px;left:0;width:76px;height:72px;background-position:-320px -90px}
+.detail_maehwa .ico_mark{top:7px;left:-1px;width:79px;height:75px;background-position:0 -180px}
+.detail_valkyrie .ico_mark{top:1px;left:12px;width:52px;height:87px;background-position:-90px -180px}
+.detail_wizard .ico_mark{top:10px;left:0;width:76px;height:66px;background-position:-150px -180px}
+.detail_witch .ico_mark{top:16px;left:0;width:80px;height:58px;background-position:-230px -180px}
+.detail_kunoichi .ico_mark{top:1px;left:0;width:76px;height:88px;background-position:-320px -180px}
+.detail_lahn .ico_mark{top:1px;left:0;width:76px;height:88px;background-position:0 -270px}
+
+.detail_darkknight{display:block;} /* first class */
+.detail_striker{display:none;}
+.detail_mystic{display:none;}
+.detail_warrior{display:none;}
+.detail_sorceress{display:none;}
+.detail_ranger{display:none;}
+.detail_berserker{display:none;}
+.detail_tamer{display:none;}
+.detail_ninja{display:none;}
+.detail_musa{display:none;}
+.detail_maehwa{display:none;}
+.detail_valkyrie{display:none;}
+.detail_wizard{display:none;}
+.detail_witch{display:none;}
+.detail_kunoichi{display:none;}
+.detail_lahn{display:none;}
+
+/* 설명문구 높이 고정 최소 7 lines - [BRQ-50] MAIN/ Class 영역에서 각 클래스 클릭시 동작 개선 관련 2018.02.26 by ria yu */
+.detail_class .desc_normal, .detail_class .desc_awake{position:relative;z-index:10;max-width:600px;padding-top:22px;font-size:19px;line-height:33px;color:#626262;min-height:231px}
+.detail_class .desc_awake{display:none}
+.detail_class .char_awake{display:none}
+.char_normal, .char_awake{position:absolute;bottom:0;right:0;width:100%;height:1062px}
+.awake .desc_normal{display:none}
+.awake .char_normal{display:none}
+.awake .desc_awake{display:block}
+.awake .char_awake{display:block}
+.detail_class .bg_cloud{position:absolute;bottom:0;right:-610px;z-index:1;width:1323px;height:1062px;}
+.detail_class .front_char{position:absolute;bottom:0;z-index:2;-webkit-animation:fadeInFront .4s ease-in backwards;animation:fadeInFront .4s ease-in backwards}
+@keyframes fadeInFront{0%{opacity:0;-webkit-transform:translateX(130px);transform:translateX(130px)}100%{opacity:1;-webkit-transform:translateX(0);transform:translateX(0)}}
+.detail_class .back_char{position:absolute;bottom:0;-webkit-animation:fadeInBack .4s ease-in backwards;animation:fadeInBack .4s ease-in backwards}
+@keyframes fadeInBack{0%{opacity:0;-webkit-transform:translateX(-130px);transform:translateX(-130px)}100%{opacity:1;-webkit-transform:translateX(0);transform:translateX(0)}}
+.detail_darkknight .char_normal .front_char{right:96px;height:1022px;}
+.detail_darkknight .char_normal .back_char{right:-188px;height:864px;}
+.detail_darkknight .char_awake .front_char{right:58px}
+.detail_darkknight .char_awake .back_char{right:-175px}
+.detail_striker .char_normal .front_char{right:0}
+.detail_striker .char_normal .back_char{right:-211px}
+.detail_striker .char_awake .front_char{right:-174px}
+.detail_striker .char_awake .back_char{right:-254px}
+.detail_mystic .char_normal .front_char{right:-2px}
+.detail_mystic .char_normal .back_char{right:-250px}
+.detail_mystic .char_awake .front_char{right:-100px}
+.detail_mystic .char_awake .back_char{right:-278px}
+.detail_warrior .char_normal .front_char{right:-181px}
+.detail_warrior .char_normal .back_char{right:-565px}
+.detail_warrior .char_awake .front_char{right:-357px}
+.detail_warrior .char_awake .back_char{right:-427px}
+.detail_sorceress .char_normal .front_char{right:-204px}
+.detail_sorceress .char_normal .back_char{right:-256px}
+.detail_sorceress .char_awake .front_char{right:-16px}
+.detail_sorceress .char_awake .back_char{right:-425px}
+.detail_ranger .char_normal .front_char{right:-44px}
+.detail_ranger .char_normal .back_char{right:-280px}
+.detail_ranger .char_awake .front_char{right:-51px}
+.detail_ranger .char_awake .back_char{right:-366px}
+.detail_berserker .char_normal .front_char{right:-6px}
+.detail_berserker .char_normal .back_char{right:-235px}
+.detail_berserker .char_awake .front_char{right:56px}
+.detail_berserker .char_awake .back_char{right:-270px}
+.detail_tamer .char_normal .front_char{right:-250px}
+.detail_tamer .char_normal .back_char{right:-314px}
+.detail_tamer .char_awake .front_char{right:-33px}
+.detail_tamer .char_awake .back_char{right:-394px}
+.detail_ninja .char_normal .front_char{right:-284px}
+.detail_ninja .char_normal .back_char{right:-274px}
+.detail_ninja .char_awake .front_char{right:-31px}
+.detail_ninja .char_awake .back_char{right:-578px}
+.detail_musa .char_normal .front_char{right:-102px}
+.detail_musa .char_normal .back_char{right:-610px}
+.detail_musa .char_awake .front_char{right:-610px}
+.detail_musa .char_awake .back_char{right:-424px}
+.detail_maehwa .char_normal .front_char{right:-610px}
+.detail_maehwa .char_normal .back_char{right:-344px}
+.detail_maehwa .char_awake .front_char{right:-148px}
+.detail_maehwa .char_awake .back_char{right:-610px}
+.detail_valkyrie .char_normal .front_char{right:3px}
+.detail_valkyrie .char_normal .back_char{right:-479px}
+.detail_valkyrie .char_awake .front_char{right:-259px}
+.detail_valkyrie .char_awake .back_char{right:-220px}
+.detail_wizard .char_normal .front_char{right:126px}
+.detail_wizard .char_normal .back_char{right:-179px}
+.detail_wizard .char_awake .front_char{right:43px}
+.detail_wizard .char_awake .back_char{right:-240px}
+.detail_witch .char_normal .front_char{right:53px}
+.detail_witch .char_normal .back_char{right:-270px}
+.detail_witch .char_awake .front_char{right:0}
+.detail_witch .char_awake .back_char{right:-233px}
+.detail_kunoichi .char_normal .front_char{right:105px}
+.detail_kunoichi .char_normal .back_char{right:-251px}
+.detail_kunoichi .char_awake .front_char{right:46px}
+.detail_kunoichi .char_awake .back_char{right:-353px}
+.detail_lahn .char_normal .front_char{right:50px;top:5px;}
+.detail_lahn .char_normal .back_char{right:-200px;top:170px;}
+.detail_lahn .char_awake .front_char{right:26px;top:5px;}
+.detail_lahn .char_awake .back_char{right:-240px;top:230px;}
+
+.detail_class .btn_trigger{position:absolute;top:50%;right:40px;z-index:10;width:72px;height:72px;margin-top:-36px;background-position:-80px 0}
+.detail_class .btn_trigger:hover{background-position:-80px -80px}
+.black_class .btn_video{position:absolute;left:40px;bottom:96px;width:330px}
+.btn_video .ico_play{width:16px;height:16px;margin:25px 0 0 1px;background-position:-160px -90px}/* 2018-03-05 수정 */
+.btn_video:hover .ico_play{background-position:-160px -110px}
+.black_class .btn_video.awake{border-width:2px}
+.black_class .btn_video.awake .inner_btn{border:1px solid #cb413e;height:60px;line-height:62px;background:rgba(255,255,255,.1);color:#cb413e}
+.btn_video.awake .ico_play{margin-top:23px;background-position:-440px -320px}
+.btn_video.awake:hover{border-color:#c53835}
+.btn_video.awake:hover .inner_btn{background-color:rgba(255,255,255,.4)}
+.btn_video.awake:hover .ico_play{background-position:-440px -340px}
+
+.black_class .normal .btn_black{left:39px;bottom:165px;width:332px;border:2px solid #cb413e}
+.black_class .normal .inner_btn{height:62px;line-height:62px;background:rgba(255,255,255,.1);border:1px solid #cb413e;color:#cb413e}
+.black_class .normal .btn_black:hover{border:2px solid #c53835}
+.black_class .normal .btn_black:hover .inner_btn{background:rgba(255,255,255,.4);color:#c53835;border-color: #c53835}
+.black_class .normal .btn_video .img_black{background:url(https://akamai-webcdn.kgstatic.net/renewal/static/images/img_video_class.png) 0 0 no-repeat}
+.black_class .normal .btn_video .ico_play{background-position:0px 0px;margin-top:21px}
+.black_class .normal .btn_video:hover .ico_play{background-position:0 -20px}
+
+/* ORDER */
+.cont_ordernow .bg_cover{height:635px;text-align:center}
+.cont_ordernow .bg_cover .tit_order{display:block;padding:128px 0 1px;font-size:64px}
+.cont_ordernow .bg_cover .txt_order{display:inline-block;position:relative;font-size:30px;vertical-align:top}
+.cont_ordernow .bg_cover .txt_order .img_black, .cont_ordernow .bg_cover .txt_order .img_black{position:absolute;top:50%;width:130px;height:10px;margin-top:-5px;background:0 0 no-repeat;content:''}
+.cont_ordernow .bg_cover .txt_order .line_before{left:-152px}
+.cont_ordernow .bg_cover .txt_order .line_after{right:-152px}
+.cont_ordernow .detail_black{margin:-242px auto 0}
+.info_order{padding-bottom:100px}
+.info_order:after{content:'';display:block;clear:both}
+.info_order .bundle_order{float:left;width:406px;margin-left:31px}
+.info_order .bundle_order:first-child{margin-left:0}
+.info_order .box_orderbox{position:relative;width:406px;height:500px;background:url(https://akamai-webcdn.kgstatic.net/renewal/static/images/bg_orderbox.jpg) 0 0 no-repeat;text-align:center}
+.info_order .box_orderbox:before{position:absolute;top:235px;left:45px;width:316px;height:13px;background-position:0 -540px;content:''}
+.info_order .ico_badge{position:absolute}
+.info_order .bundle_starter .ico_badge{top:-27px;left:168px;width:71px;height:72px;background-position:0 -430px}
+.info_order .bundle_traveler .ico_badge{top:-32px;left:163px;width:79px;height:82px;background-position:-80px -430px}
+.info_order .bundle_explorer .ico_badge{top:-37px;left:158px;width:91px;height:93px;background-position:-170px -430px}
+.info_order .wrap_tit{position:static;height:174px;padding-top:67px}
+.info_order .tit_package{display:block;font-size:36px;line-height:44px;color:#181a1f;text-transform: uppercase;}
+.info_order .label_order{display:inline-block;width:182px;height:28px;margin-top:17px;font-size:20px;line-height:30px;color:#fff;text-indent:0}
+.info_order .bundle_traveler .label_order{background-position:0 -560px}
+.info_order .bundle_explorer .label_order{background-position:-190px -560px}
+.info_order .bundle_explorer .tit_package{color:#9b342f}
+.info_order .txt_price{overflow:hidden;padding:30px 44px 0;font-weight:bold}
+.info_order .txt_price .now_price{font-size:28px;color:#181a1f}
+.info_order .txt_price .emph_price{font-weight:bold;font-size:58px}
+.box_orderbox .btn_buy{width:318px;margin-top:20px}
+.box_orderbox .btn_buy .inner_btn{font-size:20px}
+.bundle_starter .btn_buy,
+.bundle_traveler .btn_buy,
+.bundle_starter .btn_buy:hover,
+.bundle_traveler .btn_buy:hover{border-color:#906845}
+.bundle_starter .btn_black .inner_btn, .bundle_traveler .btn_black .inner_btn{background-color:#906845}
+.bundle_starter .btn_black:hover .inner_btn, .bundle_traveler .btn_black:hover .inner_btn{color:#fff;background-color:#a77549}
+.info_order .group_content{position:relative;height:754px;padding:0 10px;margin-top:54px}
+.group_content .tit_content, .gift_package .tit_package{display:block;overflow:hidden;position:relative;margin-top:54px;font-size:26px;color:#101010;white-space:nowrap}
+.group_content .tit_content:after, .gift_package .tit_package:after{display:inline-block;width:100%;height:1px;margin-top:19px;background:#000;vertical-align:top;content:''}
+.group_content .tit_content .img_black, .gift_package .tit_package .img_black{width:13px;height:13px;margin:13px -1px 0 24px;background-position:-470px -120px}
