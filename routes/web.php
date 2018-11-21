@@ -12,5 +12,22 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
+});
+
+Route::get('/classes', 'ClassesController@index')->name('classes');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::namespace('Admin')->prefix('admin')->group(function () {
+
+	Route::get('/dashboard', 'MainController@index')->name('admin_dashboard');
+
+	Route::get('/classes', 'ClassesController@index')->name('admin_classes');
+
+	Route::get('/classes/add', 'ClassesController@add')->name('admin_add_class');
+
+	Route::post('/classes/add', 'ClassesController@addClass')->name('admin_add_class');
 });

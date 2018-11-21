@@ -29,7 +29,6 @@
 		<link rel="stylesheet" href="css/jquery-ui.css">
 		<link rel="stylesheet" href="css/main.css">
 		<link rel="stylesheet" href="css/classes.css">
-		
 		@yield('css')
 	</head>
 	<body>
@@ -37,23 +36,7 @@
 			@include('include.header')
 		</header>
 		
-		<div class="site-main-container">
-			@yield('top-post')
-			<!-- Start latest-post Area -->
-			<section class="latest-post-area pb-120">
-			    <div class="container no-padding">
-			        <div class="row">
-			            <div class="col-lg-8 post-list">
-			            	@yield('content')
-			            </div>
-			            <div class="col-lg-4">
-			                @include('include.sidebar')
-			            </div>
-			        </div>
-			    </div>
-			</section>
-			<!-- End latest-post Area -->
-		</div>
+		@yield('content')
 		
 		@include('include.footer')
 		<script src="{{ asset('js/vendor/jquery-2.2.4.min.js') }}"></script>
