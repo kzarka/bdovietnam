@@ -187,42 +187,58 @@
 .black_class .normal .btn_video .ico_play{background-position:0px 0px;margin-top:21px}
 .black_class .normal .btn_video:hover .ico_play{background-position:0 -20px}
 
-/* ORDER */
-.cont_ordernow .bg_cover{height:635px;text-align:center}
-.cont_ordernow .bg_cover .tit_order{display:block;padding:128px 0 1px;font-size:64px}
-.cont_ordernow .bg_cover .txt_order{display:inline-block;position:relative;font-size:30px;vertical-align:top}
-.cont_ordernow .bg_cover .txt_order .img_black, .cont_ordernow .bg_cover .txt_order .img_black{position:absolute;top:50%;width:130px;height:10px;margin-top:-5px;background:0 0 no-repeat;content:''}
-.cont_ordernow .bg_cover .txt_order .line_before{left:-152px}
-.cont_ordernow .bg_cover .txt_order .line_after{right:-152px}
-.cont_ordernow .detail_black{margin:-242px auto 0}
-.info_order{padding-bottom:100px}
-.info_order:after{content:'';display:block;clear:both}
-.info_order .bundle_order{float:left;width:406px;margin-left:31px}
-.info_order .bundle_order:first-child{margin-left:0}
-.info_order .box_orderbox{position:relative;width:406px;height:500px;background:url(https://akamai-webcdn.kgstatic.net/renewal/static/images/bg_orderbox.jpg) 0 0 no-repeat;text-align:center}
-.info_order .box_orderbox:before{position:absolute;top:235px;left:45px;width:316px;height:13px;background-position:0 -540px;content:''}
-.info_order .ico_badge{position:absolute}
-.info_order .bundle_starter .ico_badge{top:-27px;left:168px;width:71px;height:72px;background-position:0 -430px}
-.info_order .bundle_traveler .ico_badge{top:-32px;left:163px;width:79px;height:82px;background-position:-80px -430px}
-.info_order .bundle_explorer .ico_badge{top:-37px;left:158px;width:91px;height:93px;background-position:-170px -430px}
-.info_order .wrap_tit{position:static;height:174px;padding-top:67px}
-.info_order .tit_package{display:block;font-size:36px;line-height:44px;color:#181a1f;text-transform: uppercase;}
-.info_order .label_order{display:inline-block;width:182px;height:28px;margin-top:17px;font-size:20px;line-height:30px;color:#fff;text-indent:0}
-.info_order .bundle_traveler .label_order{background-position:0 -560px}
-.info_order .bundle_explorer .label_order{background-position:-190px -560px}
-.info_order .bundle_explorer .tit_package{color:#9b342f}
-.info_order .txt_price{overflow:hidden;padding:30px 44px 0;font-weight:bold}
-.info_order .txt_price .now_price{font-size:28px;color:#181a1f}
-.info_order .txt_price .emph_price{font-weight:bold;font-size:58px}
-.box_orderbox .btn_buy{width:318px;margin-top:20px}
-.box_orderbox .btn_buy .inner_btn{font-size:20px}
-.bundle_starter .btn_buy,
-.bundle_traveler .btn_buy,
-.bundle_starter .btn_buy:hover,
-.bundle_traveler .btn_buy:hover{border-color:#906845}
-.bundle_starter .btn_black .inner_btn, .bundle_traveler .btn_black .inner_btn{background-color:#906845}
-.bundle_starter .btn_black:hover .inner_btn, .bundle_traveler .btn_black:hover .inner_btn{color:#fff;background-color:#a77549}
-.info_order .group_content{position:relative;height:754px;padding:0 10px;margin-top:54px}
-.group_content .tit_content, .gift_package .tit_package{display:block;overflow:hidden;position:relative;margin-top:54px;font-size:26px;color:#101010;white-space:nowrap}
-.group_content .tit_content:after, .gift_package .tit_package:after{display:inline-block;width:100%;height:1px;margin-top:19px;background:#000;vertical-align:top;content:''}
-.group_content .tit_content .img_black, .gift_package .tit_package .img_black{width:13px;height:13px;margin:13px -1px 0 24px;background-position:-470px -120px}
+/* common */
+.img_g{display:block;width:100%}
+.btn_black{display:block;width:406px;margin:0 auto;border:1px solid #cb413e;box-sizing:border-box}
+.btn_black .inner_btn{display:block;height:64px;margin:2px;font-weight:bold;line-height:66px;color:#fff;background:#cb413e;text-align:center}
+.btn_black:hover{border-color:#c53835}
+.btn_black:hover .inner_btn{color:#fbcd3f;background:#c53835}
+.wrap_btn{font-size:0;line-height:0;text-align:center}
+.wrap_btn .btn_black{display:inline-block;margin:0 12px;vertical-align:top}
+.wrap_btn .btn_black .inner_btn{font-size:20px}
+.btn_cancel{border-color:#c9c9c9}
+.btn_cancel .inner_btn{background:#c9c9c9}
+.btn_cancel:hover{border-color:#bebebe}
+.btn_cancel:hover .inner_btn{color:#fff;background:#bebebe}
+.btn_regist{display:inline-block;width:234px;height:40px;font-weight:bold;font-size:17px;line-height:40px;color:#fff;background:#cb413e;text-align:center;box-sizing:border-box;vertical-align:top}
+.btn_regist:hover{color:#f8cd40;background:#c63836}
+.btn_regist.disabled{background-color:#ccc;cursor:default}
+.btn_regist.disabled:hover{color:#fff}
+.txt_num{font-family:'tahoma',sans-serif}
+.txt_error{color:#c72b1e}
+.txt_require{font-size:20px;color:#cb413e;vertical-align:-5px}
+.txt_ellipsis{display:block;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+
+.btn_video .ico_play{width:16px;height:16px;margin:25px 0 0 1px;background-position:-160px -90px}/* 2018-03-05 수정 */
+.btn_video:hover .ico_play{background-position:-160px -110px}
+.black_class .btn_video.awake{border-width:2px}
+.black_class .btn_video.awake .inner_btn{border:1px solid #cb413e;height:60px;line-height:62px;background:rgba(255,255,255,.1);color:#cb413e}
+.btn_video.awake .ico_play{margin-top:23px;background-position:-440px -320px}
+.btn_video.awake:hover{border-color:#c53835}
+.btn_video.awake:hover .inner_btn{background-color:rgba(255,255,255,.4)}
+.btn_video.awake:hover .ico_play{background-position:-440px -340px}
+
+.black_class .normal .btn_black{left:39px;bottom:165px;width:332px;border:2px solid #cb413e}
+.black_class .normal .inner_btn{height:62px;line-height:62px;background:rgba(255,255,255,.1);border:1px solid #cb413e;color:#cb413e}
+.black_class .normal .btn_black:hover{border:2px solid #c53835}
+.black_class .normal .btn_black:hover .inner_btn{background:rgba(255,255,255,.4);color:#c53835;border-color: #c53835}
+.black_class .normal .btn_video .img_black{background:url(https://akamai-webcdn.kgstatic.net/renewal/static/images/img_video_class.png) 0 0 no-repeat}
+.black_class .normal .btn_video .ico_play{background-position:0px 0px;margin-top:21px}
+.black_class .normal .btn_video:hover .ico_play{background-position:0 -20px}
+
+.detail_class .btn_trigger {
+    position: absolute;
+    top: 50%;
+    right: 40px;
+    z-index: 10;
+    width: 72px;
+    height: 72px;
+    margin-top: -36px;
+    background-position: -80px 0;
+}
+.img_black {
+    display: inline-block;
+    background: url(https://akamai-webcdn.kgstatic.net/renewal/static/images/img_black_181115.png) 0 0 no-repeat;
+    text-indent: -9999px;
+    vertical-align: top;
+}

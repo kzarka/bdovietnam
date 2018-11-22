@@ -37,7 +37,7 @@
             @endforeach
         </div>
         <!-- normal -->
-        <a href="" id="combat_link" class="btn_black btn_video obj movie_link awake cboxElement scroll_on">
+        <a href="" id="combat_link" class="btn_black btn_video obj movie_link cboxElement scroll_on">
             <span class="inner_btn">
                 WATCH COMBAT VIDEO
                 <span class="img_black ico_play"></span>

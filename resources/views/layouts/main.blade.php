@@ -19,16 +19,17 @@
 		<!--
 		CSS
 		============================================= -->
-		<link rel="stylesheet" href="css/linearicons.css">
-		<link rel="stylesheet" href="css/font-awesome.min.css">
-		<link rel="stylesheet" href="css/bootstrap.css">
-		<link rel="stylesheet" href="css/magnific-popup.css">
-		<link rel="stylesheet" href="css/nice-select.css">
-		<link rel="stylesheet" href="css/animate.min.css">
-		<link rel="stylesheet" href="css/owl.carousel.css">
-		<link rel="stylesheet" href="css/jquery-ui.css">
-		<link rel="stylesheet" href="css/main.css">
-		<link rel="stylesheet" href="css/classes.css">
+		<link rel="stylesheet" href="{{ asset('css/linearicons.css') }}">
+		<link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
+		<link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+		<link rel="stylesheet" href="{{ asset('css/magnific-popup.css') }}">
+		<link rel="stylesheet" href="{{ asset('css/nice-select.css') }}">
+		<link rel="stylesheet" href="{{ asset('css/animate.min.css') }}">
+		<link rel="stylesheet" href="{{ asset('css/owl.carousel.css') }}">
+		<link rel="stylesheet" href="{{ asset('css/jquery-ui.css') }}">
+		<link rel="stylesheet" href="{{ asset('css/main.css') }}">
+		<link rel="stylesheet" href="{{ asset('css/classes.css') }}">
+		<link rel="stylesheet" href="{{ asset('css/custom.css') }}">
 		
 		@yield('css')
 	</head>
@@ -71,6 +72,7 @@
 		<script src="{{ asset('js/owl.carousel.min.js') }}"></script>
 		<script src="{{ asset('js/mail-script.js') }}"></script>
 		<script src="{{ asset('js/main.js') }}"></script>
+		<script src="{{ asset('js/timer.js') }}"></script>
 		@yield('js')
 	</body>
 </html>

@@ -21,6 +21,8 @@ $(document).ready(function() {
         parent.find('.desc_awake').toggle();
         parent.find('.char_normal').toggle();
         parent.find('.char_awake').toggle();
+        $('a.btn_black.btn_video').toggleClass('awake');
+        $('span.txt_awake').toggle();
     });
 
     function initClass() {

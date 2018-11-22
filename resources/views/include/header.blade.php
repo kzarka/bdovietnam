@@ -22,7 +22,7 @@
 	<div class="container">
 		<div class="row justify-content-between align-items-center">
 			<div class="col-lg-4 col-md-4 col-sm-12 logo-left no-padding">
-				<a href="index.html">
+				<a href="/">
 					<img class="img-fluid" src="img/logo.png" alt="">
 				</a>
 			</div>
@@ -36,7 +36,7 @@
 	<div class="row align-items-center justify-content-between">
 		<nav id="nav-menu-container">
 			<ul class="nav-menu">
-				<li class="menu-active"><a href="index.html">Home</a></li>
+				<li class="menu-active"><a href="/">Home</a></li>
 				<li><a href="archive.html">Archive</a></li>
 				<li><a href="category.html">Category</a></li>
 				<li class="menu-has-children"><a href="">Post Types</a>
@@ -66,3 +66,21 @@
 		</div>
 	</div>
 </div>
+
+<section class="top-post-area pt-10">
+	<div class="container no-padding">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="timer-top">
+					<div id="time_span" style="font-size: 12pt;display: inline-block;text-align: left;font-weight: bold;"></div>
+					<div id="night_span" style="font-size: 10pt; text-align: left; display: inline-block; text-transform: uppercase; padding-left: 30px; font-weight: bold; color: rgb(255, 255, 255);"></div>
+					<div id="daily_span" style="font-size: 10pt; text-align: left; display: inline-block; text-transform: uppercase; padding-left: 30px; color: rgb(255, 255, 255); font-weight: bold;"></div>
+					<div id="imperial_span" style="font-size: 10pt; text-align: left; display: inline-block; text-transform: uppercase; padding-left: 30px; color: rgb(255, 255, 255); font-weight: bold;"></div>
+				</div>
+			</div>
+			@if(!Request::is('/'))
+				@include('include.tips')
+			@endif
+		</div>
+	</div>
+</section>
