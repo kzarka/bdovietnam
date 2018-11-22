@@ -4,6 +4,8 @@ $(document).ready(function() {
     var className = 'darkknight';
     var awaken = false;
 
+    initClass();
+
     $('ul.list_class').on('click', 'a', function (){
     	awaken = false;
     	$('ul.list_class li').removeClass('on');
@@ -11,11 +13,17 @@ $(document).ready(function() {
     	$('div.detail_'+className).hide();
     	className = $(this).data("class");
     	$('div.detail_'+className).show();
-    	$('.char_normal img.lozad').attr('src', '');
-    	let img_front = $('div.detail_'+className+' .char_normal img.front_char.lozad').attr('data-src');
-    	let img_back = $('div.detail_'+className+' .char_normal img.back_char.lozad').attr('data-src');
-
-    	$('div.detail_'+className+' .char_normal img.front_char.lozad').attr('src', img_front);
-    	$('div.detail_'+className+' .char_normal img.back_char.lozad').attr('src', img_back);
     });
+
+    $('a.btn_trigger').on('click', function (){
+        let parent = $(this).parent('div');
+        parent.find('.desc_normal').toggle();
+        parent.find('.desc_awake').toggle();
+        parent.find('.char_normal').toggle();
+        parent.find('.char_awake').toggle();
+    });
+
+    function initClass() {
+        $('ul.list_class li').first().addClass('on');
+    }
 });

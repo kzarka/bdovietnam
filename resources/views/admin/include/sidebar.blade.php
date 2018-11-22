@@ -16,7 +16,7 @@
                 </a>
                 <ul class="treeview-menu">
                     <li class="active"><a href="{{ route('admin_classes') }}"><i class="fa fa-circle-o"></i> List Class</a></li>
-                    <li><a href="{{ route('admin_add_class') }}"><i class="fa fa-circle-o"></i> Add Class</a></li>
+                    <li><a href="{{ route('admin_create_class') }}"><i class="fa fa-circle-o"></i> Add Class</a></li>
                 </ul>
             </li>
             <li class="treeview">

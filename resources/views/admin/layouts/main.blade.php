@@ -7,8 +7,7 @@
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
-
-
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Bootstrap 3.3.7 -->
     <link rel="stylesheet" href="{{ asset('admin/css/bootstrap.min.css') }}">
@@ -65,7 +64,7 @@
         </section>
     </div>
     <!-- /.content-wrapper -->
-
+    @yield('modal')
     @include('admin.include.footer')
 
   <!-- Add the sidebar's background. This div must be placed
@@ -89,8 +88,6 @@
 <script src="{{ asset('admin/js/bootstrap.min.js') }}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('admin/js/adminlte.min.js') }}"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="{{ asset('admin/js/dashboard.js') }}"></script>
 
 <!-- Slick Slider -->
 <script src="{{ asset('admin/js/slick.min.js') }}"></script>
@@ -103,7 +100,7 @@
 <!-- DataTables -->
 <script src="{{ asset('admin/js/jquery.dataTables.min.js') }}"></script>
 <script src="{{ asset('admin/js/dataTables.bootstrap.min.js') }}"></script>
-
+@yield('js')
 
 <!-- page script -->
 <script>
@@ -117,7 +114,7 @@
         'autoWidth'   : false
       })
     })
-  </script>
+</script>
 
 
 </body>

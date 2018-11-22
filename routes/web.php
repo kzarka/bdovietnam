@@ -25,9 +25,16 @@ Route::namespace('Admin')->prefix('admin')->group(function () {
 
 	Route::get('/dashboard', 'MainController@index')->name('admin_dashboard');
 
+	Route::get('/', function () {
+		return redirect()->route('admin_dashboard');
+	});
+
 	Route::get('/classes', 'ClassesController@index')->name('admin_classes');
 
-	Route::get('/classes/add', 'ClassesController@add')->name('admin_add_class');
+	Route::delete('classes/delete/{id}', 'ClassesController@delete')->name('admin_delete_class');
 
-	Route::post('/classes/add', 'ClassesController@addClass')->name('admin_add_class');
+	Route::match(['get', 'post'], '/classes/create', 'ClassesController@create')->name('admin_create_class');
+
+	Route::match(['get', 'post'], '/classes/edit/{id}', 'ClassesController@edit')->name('admin_edit_class');
+
 });
