@@ -13,13 +13,13 @@
 
 Route::get('/', function () {
     return view('index');
-});
+})->name('home');
 
 Route::get('/classes', 'ClassesController@index')->name('classes');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index');
 
 Route::namespace('Admin')->prefix('admin')->middleware('auth')->group(function () {
 

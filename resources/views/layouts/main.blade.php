@@ -1,6 +1,14 @@
 <?php
 	/* Specific page contain sidebar or not */ 
 	$sidebar = (bool)(isset($sidebar) ? $sidebar : true);
+	/* Specific page breadcrumb */ 
+	$breadcrumb = (isset($breadcrumb) ? $breadcrumb : null);
+	if(!$breadcrumb) {
+		$breadcrumb = [
+			'name' => 'home',
+			'object' => ''
+		];
+	}
 ?>
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}" class="no-js">
@@ -34,7 +42,7 @@
 		<link rel="stylesheet" href="{{ asset('css/main.css') }}">
 		<link rel="stylesheet" href="{{ asset('css/classes.css') }}">
 		<link rel="stylesheet" href="{{ asset('css/custom.css') }}">
-		
+		<link rel="stylesheet" href="{{ asset('css/breadcrumb.css') }}">
 		@yield('css')
 	</head>
 	<body>

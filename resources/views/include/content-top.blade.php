@@ -63,9 +63,8 @@
                 </div>
             </div>
             @else
-            @include('include.breadcrumb')
+            {{ Breadcrumbs::render($breadcrumb['name'], $breadcrumb['object']) }}
             @endif
-
             @include('include.tips')
         </div>
     </div>

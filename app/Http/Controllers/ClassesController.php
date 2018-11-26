@@ -19,6 +19,14 @@ class ClassesController extends Controller
     		$index = preg_replace('/\s/', '', $class->name);
     		$class->index = strtolower($index);
     	}
-        return view('class.index', ['classes' => $classes, 'sidebar' => false]);
+        $breadcrumb = [
+            'name' => 'class',
+            'object' => ''
+        ];
+        return view('class.index', [
+            'classes' => $classes,
+            'breadcrumb' => $breadcrumb,
+            'sidebar' => false,
+        ]);
     }
 }
