@@ -59,7 +59,7 @@
         <!-- Main content -->
         <section class="content">
             <div class="row">
-                @yield('content')
+            @yield('content')
             </div>
         </section>
     </div>

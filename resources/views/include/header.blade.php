@@ -79,9 +79,6 @@
 					<div id="imperial_span" style="font-size: 10pt; text-align: left; display: inline-block; text-transform: uppercase; padding-left: 30px; color: rgb(255, 255, 255); font-weight: bold;"></div>
 				</div>
 			</div>
-			@if(!Request::is('/'))
-				@include('include.tips')
-			@endif
 		</div>
 	</div>
 </section>

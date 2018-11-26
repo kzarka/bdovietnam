@@ -15,8 +15,8 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        $classes = Classes::where('enable', 1)->get();
-        return view('admin.class.index', ['classes' => $classes]);
+        $categories = Categories::where('active', 1)->get();
+        return view('admin.category.index', ['categories' => $categories]);
     }
 
     public function create(Request $request)

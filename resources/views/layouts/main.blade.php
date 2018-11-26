@@ -1,3 +1,7 @@
+<?php
+	/* Specific page contain sidebar or not */ 
+	$sidebar = (bool)(isset($sidebar) ? $sidebar : true);
+?>
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}" class="no-js">
 	<head>
@@ -39,8 +43,8 @@
 		</header>
 		
 		<div class="site-main-container">
-			@yield('top-post')
-			<!-- Start latest-post Area -->
+			@include('include.content-top')
+			@if ($sidebar)
 			<section class="latest-post-area pb-120">
 			    <div class="container no-padding">
 			        <div class="row">
@@ -53,7 +57,11 @@
 			        </div>
 			    </div>
 			</section>
-			<!-- End latest-post Area -->
+			@else
+			<section class="latest-post-area pb-120">
+			    @yield('content')
+			</section>
+			@endif
 		</div>
 		
 		@include('include.footer')

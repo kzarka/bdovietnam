@@ -7,6 +7,9 @@
             <li>
                 <a href="{{ route('admin_dashboard') }}"><i class="fa fa-dashboard"></i> <span> Dashboard</span></a>
             </li>
+            <li>
+                <a href="{{ route('admin_category') }}"><i class="fa fa-dashboard"></i> <span> Category</span></a>
+            </li>
             <li class="active treeview">
                 <a href="#">
                     <i class="fa fa-table"></i><span>Classes</span>

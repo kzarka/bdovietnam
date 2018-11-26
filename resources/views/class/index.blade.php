@@ -1,4 +1,4 @@
-@extends('layouts.max-width')
+@extends('layouts.main')
 
 @section('title', 'Classes')
 

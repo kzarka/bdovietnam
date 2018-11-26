@@ -2,10 +2,6 @@
 
 @section('title', 'Home Page')
 
-@section('top-post')
-    @include('include.top-content')
-@endsection
-
 @section('content')
 <!-- Start latest-post Area -->
 <div class="latest-post-wrap">

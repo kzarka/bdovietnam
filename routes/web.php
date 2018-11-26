@@ -37,4 +37,6 @@ Route::namespace('Admin')->prefix('admin')->middleware('auth')->group(function (
 
 	Route::match(['get', 'post'], '/classes/edit/{id}', 'ClassesController@edit')->name('admin_edit_class');
 
+	Route::get('/categories', 'CategoriesController@index')->name('admin_category');
+
 });

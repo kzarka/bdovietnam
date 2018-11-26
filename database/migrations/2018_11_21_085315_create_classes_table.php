@@ -16,7 +16,7 @@ class CreateClassesTable extends Migration
         Schema::create('classes', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name', 100)->nullable();
-            $table->tinyInteger('enable')->default(1);
+            $table->tinyInteger('active')->default(1);
             $table->text('desc_normal')->nullable();
             $table->text('desc_awaken')->nullable();
             $table->tinyInteger('has_awk')->default(0);

@@ -2,6 +2,7 @@
 <section class="top-post-area pt-10">
     <div class="container no-padding">
         <div class="row small-gutters">
+            @if(Request::is('/'))
             <div class="col-lg-8 top-post-left">
                 <div class="feature-image-thumb relative">
                     <div class="overlay overlay-bg"></div>
@@ -61,6 +62,10 @@
                     </div>
                 </div>
             </div>
+            @else
+            @include('include.breadcrumb')
+            @endif
+
             @include('include.tips')
         </div>
     </div>
