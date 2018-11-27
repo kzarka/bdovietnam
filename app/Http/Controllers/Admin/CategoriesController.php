@@ -61,9 +61,13 @@ class CategoriesController extends Controller
     {
         $class = Categories::find($id);
         if(!$class) {
+
             return 'false';
         }
+        Categories::where('parent_id', id)
+          ->update(['parent_id' => 0]);
         $class->delete();
+
         return 'true';
     }
 }
