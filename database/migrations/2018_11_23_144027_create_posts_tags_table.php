@@ -15,8 +15,8 @@ class CreatePostsTagsTable extends Migration
     {
         Schema::create('posts_tags', function (Blueprint $table) {
             $table->increments('id');
-            $table->tinyInteger('post_id')->nullable();
-            $table->tinyInteger('tag_id')->nullable();
+            $table->smallInteger('post_id')->nullable();
+            $table->smallInteger('tag_id')->nullable();
         });
     }
 

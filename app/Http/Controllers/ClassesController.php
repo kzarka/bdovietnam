@@ -14,7 +14,7 @@ class ClassesController extends Controller
      */
     public function index()
     {
-    	$classes = Classes::where('enable', 1)->get();
+    	$classes = Classes::where('active', 1)->get();
     	foreach ($classes as $class) {
     		$index = preg_replace('/\s/', '', $class->name);
     		$class->index = strtolower($index);

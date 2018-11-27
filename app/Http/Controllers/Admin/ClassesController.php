@@ -15,7 +15,7 @@ class ClassesController extends Controller
      */
     public function index()
     {
-        $classes = Classes::where('enable', 1)->get();
+        $classes = Classes::where('active', 1)->get();
         return view('admin.class.index', ['classes' => $classes]);
     }
 

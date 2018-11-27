@@ -10,6 +10,7 @@
 
 <input type="hidden" id="new_category_url" value="{{ route('admin_category_create') }}">
 <input type="hidden" id="load_category_url" value="{{ route('categories_load_api') }}">
+<input type="hidden" id="load_parent_category_url" value="{{ route('categories_load_parents_api') }}">
 <input type="hidden" id="update_category_url" value="{{ route('admin_category_update', '') }}">
 <input type="hidden" id="delete_category_url" value="{{ route('admin_category_delete', '') }}">
 <div class="col-xs-12">
@@ -132,5 +133,9 @@
 @endsection
 
 @section('js')
+<script type="text/javascript">
+    var parent = {!! json_encode($parent) !!};
+</script>
 <script src="{{ asset('admin/js/categories.js') }}"></script>
+
 @endsection

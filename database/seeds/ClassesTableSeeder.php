@@ -33,7 +33,7 @@ class ClassesTableSeeder extends Seeder
         ];
 
         foreach ($classList as $class) {
-        	Classes::create(['name' => $class, 'enable' => 1, 'has_awk' => 1]);
+        	Classes::create(['name' => $class, 'active' => 1, 'has_awk' => 1]);
         }
         
     }

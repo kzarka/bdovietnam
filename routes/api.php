@@ -19,3 +19,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::post('categories/load', 'Api\CategoriesController@load')->name('categories_load_api');
 
+Route::get('categories/load_parent', 'Api\CategoriesController@loadParents')->name('categories_load_parents_api');
+

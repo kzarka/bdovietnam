@@ -13,7 +13,7 @@ class CategoriesController extends Controller
     {
         $categories = Categories::select('*')->get();
         foreach ($categories as $category) {
-            $category->parent_name = Categories::getName($category->id);
+            $category->parent_name = Categories::getName($category->parent_id);
         }
         $result['data'] = $categories;
         return json_encode($result);
@@ -27,5 +27,12 @@ class CategoriesController extends Controller
         }
         $class->delete();
         return 'true';
+    }
+
+    public function loadParents(Request $request) {
+        $parent = Categories::select('id', 'name', 'parent_id')
+            ->where('parent_id', 0)
+            ->get();
+        return ($parent);
     }
 }

@@ -19,7 +19,7 @@ class CreatePostsTable extends Migration
             $table->string('slug', 100)->nullable();
             $table->text('content')->nullable();
             $table->tinyInteger('public')->default(0);
-            $table->tinyInteger('author_id')->nullable();
+            $table->smallInteger('author_id')->nullable();
             $table->timestamps();
         });
     }

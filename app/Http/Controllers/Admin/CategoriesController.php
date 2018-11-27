@@ -15,8 +15,10 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        $categories = Categories::where('active', 1)->get();
-        return view('admin.category.index', ['categories' => $categories]);
+        $parent = Categories::select('id', 'name', 'parent_id')
+            ->where('parent_id', 0)
+            ->get();
+        return view('admin.category.index', ['parent' => $parent]);
     }
 
     public function update(Request $request, $id)
@@ -24,6 +26,9 @@ class CategoriesController extends Controller
         $data = $request->all();
         $category = Categories::find($id);
         //validate
+        if ($request->parent_id) {
+            $category->parent_id = $request->parent_id;
+        } else $category->parent_id = 0;
         $category->fill($data);
         $category->save();
         return 'true';
@@ -35,6 +40,9 @@ class CategoriesController extends Controller
         $data = $request->all();
         //validate
         $category->fill($data);
+        if ($request->parent_id) {
+            $category->parent_id = $request->parent_id;
+        }
         $category->save();
         return 'true';
     }

@@ -35,6 +35,7 @@ $(document).ready(function() {
             data: data,
             success: (data, textStatus, xhr) => {
                 $('#modal-add').modal('hide');
+                loadParents();
                 initTable();
                 resetForm();
             }
@@ -48,6 +49,7 @@ $(document).ready(function() {
             type: 'delete',
             success: (data, textStatus, xhr) => {
                 $('#modal-delete').modal('hide');
+                loadParents();
                 initTable();
             },
             error: function(xhr) {
@@ -72,12 +74,18 @@ $(document).ready(function() {
 
     function resetForm() {
         $('#category_form').find('input, textarea').removeClass('border-red').val('');
+        $("select[name=parent_id]").empty();
+        $("select[name=parent_id]").append(new Option('Select parent'));
+        for(let i = 0; i < parent.length; i++) {
+            $("select[name=parent_id]").append(new Option(parent[i].name, parent[i].id));
+        }
+        
         $('#category_form').find('select').prop('selectedIndex', 0);
     }
 
     function getFormData() {
         let name = $('input[name=name]').val();
-        let parent_id = null;
+        let parent_id = 0;
         let slug = $('input[name=slug]').val();
         let active = $('select[name=active]').val();
         let desc = $('textarea[name=desc]').val();
@@ -102,8 +110,31 @@ $(document).ready(function() {
         $('input[name=name]').val(data.name);
         $('input[name=slug]').val(data.slug);
         $('select[name=active]').val(data.active);
-        $('select[name=parent_id]').val(data.parent_id);
+        $("select[name=parent_id]").empty();
+        $("select[name=parent_id]").append(new Option('Select parent'));
+        for(let i = 0; i < parent.length; i++) {
+            if(data.id === parent[i].id) continue;
+            $("select[name=parent_id]").append(new Option(parent[i].name, parent[i].id));
+        }
+        if(data.parent_id === 0) {
+            $('select[name=parent_id]')[0].selectedIndex[0];
+        } else {
+            $('select[name=parent_id]').val(data.parent_id);
+        }
         $('textarea[name=desc]').val(data.desc);
+    }
+
+    function loadParents() {
+        $.ajax({
+            url: $('#load_parent_category_url').val(),
+            type: 'GET',
+            success: (data, textStatus, xhr) => {
+                parent = data;
+            },
+            error: function(xhr) {
+                console.log(xhr.responseText);
+           }
+        });
     }
 
     function toSlug(str) {

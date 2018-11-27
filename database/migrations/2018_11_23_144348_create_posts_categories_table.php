@@ -15,8 +15,8 @@ class CreatePostsCategoriesTable extends Migration
     {
         Schema::create('posts_categories', function (Blueprint $table) {
             $table->increments('id');
-            $table->tinyInteger('post_id')->nullable();
-            $table->tinyInteger('category_id')->nullable();
+            $table->smallInteger('post_id')->nullable();
+            $table->smallInteger('category_id')->nullable();
             $table->timestamps();
         });
     }
