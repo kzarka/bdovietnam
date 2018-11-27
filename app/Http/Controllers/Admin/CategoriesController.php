@@ -19,43 +19,39 @@ class CategoriesController extends Controller
         return view('admin.category.index', ['categories' => $categories]);
     }
 
-    public function create(Request $request)
+    public function update(Request $request, $id)
     {
-        $method = $request->method();
-        $class = new Classes();
-        if($method == 'GET') {
-            return view('admin.class.form', ['class' => $class]);
-        }
-
         $data = $request->all();
+        $category = Categories::find($id);
         //validate
-        $class->fill($data);
-        $class->save();
-        return redirect()->route('admin_classes');
+        $category->fill($data);
+        $category->save();
+        return 'true';
     }
 
-    public function edit(Request $request, $id)
+    public function create(Request $request)
     {
-        $method = $request->method();
-        $class = Classes::find($id);
-        if(!$class) {
-            return redirect()->route('admin_classes');
-        }
-
-        if($method == 'GET') {
-            return view('admin.class.form', ['class' => $class]);
-        }
-
+        $category = new Categories();
         $data = $request->all();
         //validate
-        $class->fill($data);
-        $class->save();
-        return redirect()->route('admin_classes');
+        $category->fill($data);
+        $category->save();
+        return 'true';
+    }
+
+    public function load(Request $request)
+    {
+        $categories = Categories::select('*')->get();
+        foreach ($categories as $category) {
+            $category->parent_name = Categories::getName($category->id);
+        }
+        $result['data'] = $categories;
+        return json_encode($result);
     }
 
     public function delete($id)
     {
-        $class = Classes::find($id);
+        $class = Categories::find($id);
         if(!$class) {
             return 'false';
         }

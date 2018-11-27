@@ -180,3 +180,7 @@ background: #fff;
     min-width: 170px;
     padding: 5px 15px;
 }
+
+.border-red {
+    border-color: #dd4b39 !important;
+}

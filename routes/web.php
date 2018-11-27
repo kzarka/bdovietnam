@@ -39,4 +39,12 @@ Route::namespace('Admin')->prefix('admin')->middleware('auth')->group(function (
 
 	Route::get('/categories', 'CategoriesController@index')->name('admin_category');
 
+	Route::post('/categories/create', 'CategoriesController@create')->name('admin_category_create');
+
+	Route::POST('/categories/load', 'CategoriesController@load')->name('admin_category_load');
+
+	Route::post('/categories/update/{id}', 'CategoriesController@update')->name('admin_category_update');
+
+	Route::delete('categories/delete/{id}', 'CategoriesController@delete')->name('admin_category_delete');
+
 });

@@ -18,13 +18,15 @@ class Categories extends Model
      */
     protected $fillable = [
         'name',
-        'enable',
-        'desc_normal',
-        'desc_awaken',
-        'has_awk',
-        'normal_video',
-        'awaken_video',
-        'normal_img',
-        'awaken_img'
+        'active',
+        'parent_id',
+        'desc',
+        'slug'
     ];
+
+    public static function getName($id) {
+        return self::select('name')
+            ->where('id', $id)
+            ->first()['name'] ?: '';
+    }
 }
