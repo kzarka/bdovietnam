@@ -24,7 +24,7 @@ class PostsController extends Controller
         $method = $request->method();
         $class = new Classes();
         if($method == 'GET') {
-            return view('admin.class.form', ['class' => $class]);
+            return view('admin.post.form', ['class' => $class]);
         }
 
         $data = $request->all();
