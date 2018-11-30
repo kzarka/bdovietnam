@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Posts;
+use App\Models\Categories;
+use App\Models\PostsCategories;
 
 class PostsController extends Controller
 {
@@ -15,51 +17,73 @@ class PostsController extends Controller
      */
     public function index()
     {
-        $classes = Classes::where('enable', 1)->get();
-        return view('admin.class.index', ['classes' => $classes]);
+        $posts = Posts::all();
+        return view('admin.posts.index', ['posts' => $posts]);
     }
 
     public function create(Request $request)
     {
+        $categories = Categories::all();
         $method = $request->method();
-        $class = new Classes();
+        $posts = new Posts();
         if($method == 'GET') {
-            return view('admin.class.form', ['class' => $class]);
+            return view('admin.posts.form', ['posts' => $posts, 'categories' => $categories]);
         }
 
         $data = $request->all();
+        \Log::info($data);
         //validate
-        $class->fill($data);
-        $class->save();
-        return redirect()->route('admin_classes');
+        $posts->fill($data);
+        if ($data['author_id']) {
+            $post->author_id = $data['author_id'];
+        }
+        $posts->save();
+        PostsCategories::updateItems($post->id, $data['category']);
+        return redirect()->route('admin_posts');
     }
 
     public function edit(Request $request, $id)
     {
         $method = $request->method();
-        $class = Classes::find($id);
-        if(!$class) {
-            return redirect()->route('admin_classes');
+        $categories = Categories::all();
+        $selectedArray = '[';
+        $selectedCategories = PostsCategories::select('category_id')->where('post_id', $id)->get();
+        foreach ($selectedCategories as $selectedCategory) {
+            $selectedArray .= $selectedCategory['category_id'] . ' ,';
+        }
+        if(strlen ($selectedArray) > 1) {
+            $selectedArray = rtrim($selectedArray, ' ,');
+        }
+        $selectedArray .= ']';
+        //dd($selectedArray);
+        $post = Posts::find($id);
+        if(!$post) {
+            return redirect()->route('admin_posts');
         }
 
         if($method == 'GET') {
-            return view('admin.class.form', ['class' => $class]);
+            return view('admin.posts.form', ['post' => $post, 'categories' => $categories, 'selectedArray' => $selectedArray]);
         }
 
         $data = $request->all();
         //validate
-        $class->fill($data);
-        $class->save();
-        return redirect()->route('admin_classes');
+        if ($data['author_id']) {
+            $post->author_id = $data['author_id'];
+        }
+        \Log::info($data);
+        $post->fill($data);
+        $post->save();
+        PostsCategories::updateItems($post->id, $data['category']);
+        return redirect()->route('admin_posts');
     }
 
     public function delete($id)
     {
-        $class = Classes::find($id);
-        if(!$class) {
+        $post = Posts::find($id);
+        if(!$post) {
             return 'false';
         }
-        $class->delete();
+        $post->delete();
         return 'true';
     }
 }

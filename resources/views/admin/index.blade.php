@@ -2,10 +2,6 @@
 
 @section('title', 'Dashboard')
 
-@section('content-header')
-    <h1>Dashboard</h1>
-@endsection
-
 @section('content')
 <div class="col-xs-12">
     <div class="box">                

@@ -1,3 +1,18 @@
+<?php
+    use Illuminate\Support\Facades\Route;
+    $currentUrl = Route::getFacadeRoot()->current()->uri();
+    $header = 'Dashboard';
+    if (strstr($currentUrl, 'posts') == true) {
+        $header = 'Posts';
+    }
+    if (strstr($currentUrl, 'categories') == true) {
+        $header = 'Categories';
+    }
+    if (strstr($currentUrl, 'classes') == true) {
+        $header = 'Classes';
+    }
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,6 +30,8 @@
     <link rel="stylesheet" href="{{ asset('admin/css/font-awesome.min.css') }}">
     <!-- Ionicons -->
     <link rel="stylesheet" href="{{ asset('admin/css/ionicons.css') }}">
+    <!-- Select2 -->
+    <link rel="stylesheet" href="{{ asset('admin/css/select2.min.css') }}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('admin/css/AdminLTE.min.css') }}">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
@@ -53,9 +70,7 @@
     <div class="content-wrapper"> 
         <!-- Content Header (Page header) -->
 
-        <section class="content-header">
-            @yield('content-header')
-        </section>
+        @include('admin.include.breadcrumb')
         <!-- Main content -->
         <section class="content">
             <div class="row">

@@ -7,10 +7,6 @@
 
 @section('title', ($isNew) ? 'New Class' : 'Edit Class')
 
-@section('content-header')
-    <h1>Breadcrumb</h1>
-@endsection
-
 @section('content')
 <div class="col-lg-7">
     <div class="box box-info">                
