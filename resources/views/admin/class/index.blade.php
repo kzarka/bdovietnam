@@ -2,10 +2,6 @@
 
 @section('title', 'Classes')
 
-@section('content-header')
-    <h1>Classes</h1>
-@endsection
-
 @section('content')
 <input type="hidden" id="delete_class_url" value="{{ route('admin_delete_class', '') }}">
 <div class="col-xs-12">

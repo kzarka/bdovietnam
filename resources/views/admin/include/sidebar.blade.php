@@ -4,13 +4,25 @@
     <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header">MAIN NAVIGATION</li>
+            @if (strstr($currentUrl, 'dashboard') === false)
             <li>
+            @else
+            <li class="active">
+            @endif
                 <a href="{{ route('admin_dashboard') }}"><i class="fa fa-dashboard"></i> <span> Dashboard</span></a>
             </li>
+            @if (strstr($currentUrl, 'categories') === false)
             <li>
-                <a href="{{ route('admin_category') }}"><i class="fa fa-dashboard"></i> <span> Category</span></a>
+            @else
+            <li class="active">
+            @endif
+                <a href="{{ route('admin_categories') }}"><i class="fa fa-dashboard"></i> <span> Category</span></a>
             </li>
+            @if (strstr($currentUrl, 'classes') === false)
+            <li class="treeview">
+            @else
             <li class="active treeview">
+            @endif
                 <a href="#">
                     <i class="fa fa-table"></i><span>Classes</span>
                     <span class="pull-right-container">
@@ -18,8 +30,48 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="active"><a href="{{ route('admin_classes') }}"><i class="fa fa-circle-o"></i> List Class</a></li>
-                    <li><a href="{{ route('admin_create_class') }}"><i class="fa fa-circle-o"></i> Add Class</a></li>
+                    @if (strstr($currentUrl, 'classes/list') === false)
+                    <li>
+                    @else
+                    <li class="active">
+                    @endif
+                        <a href="{{ route('admin_classes') }}"><i class="fa fa-circle-o"></i> List Class</a>
+                    </li>
+                    @if (strstr($currentUrl, 'classes/create') === false)
+                    <li>
+                    @else
+                    <li class="active">
+                    @endif
+                        <a href="{{ route('admin_create_class') }}"><i class="fa fa-circle-o"></i> Add Class</a>
+                    </li>
+                </ul>
+            </li>
+            @if (strstr($currentUrl, 'posts') === false)
+            <li class="treeview">
+            @else
+            <li class="active treeview">
+            @endif
+                <a href="#">
+                    <i class="fa fa-table"></i><span>Posts</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    @if (strstr($currentUrl, 'posts/list') === false)
+                    <li>
+                    @else
+                    <li class="active">
+                    @endif
+                        <a href="{{ route('admin_posts') }}"><i class="fa fa-circle-o"></i> List Posts</a>
+                    </li>
+                    @if (strstr($currentUrl, 'posts/create') === false)
+                    <li>
+                    @else
+                    <li class="active">
+                    @endif
+                        <a href="{{ route('admin_create_post') }}"><i class="fa fa-circle-o"></i> Add Post</a>
+                    </li>
                 </ul>
             </li>
             <li class="treeview">

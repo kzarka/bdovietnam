@@ -17,14 +17,8 @@ class Posts extends Model
      * @var array
      */
     protected $fillable = [
-        'name',
-        'enable',
-        'desc_normal',
-        'desc_awaken',
-        'has_awk',
-        'normal_video',
-        'awaken_video',
-        'normal_img',
-        'awaken_img'
+        'title',
+        'public',
+        'content'
     ];
 }

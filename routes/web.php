@@ -28,8 +28,8 @@ Route::namespace('Admin')->prefix('admin')->middleware('auth')->group(function (
 	Route::get('/', function () {
 		return redirect()->route('admin_dashboard');
 	});
-
-	Route::get('/classes', 'ClassesController@index')->name('admin_classes');
+	//class
+	Route::get('/classes/list', 'ClassesController@index')->name('admin_classes');
 
 	Route::delete('classes/delete/{id}', 'ClassesController@delete')->name('admin_delete_class');
 
@@ -37,7 +37,8 @@ Route::namespace('Admin')->prefix('admin')->middleware('auth')->group(function (
 
 	Route::match(['get', 'post'], '/classes/edit/{id}', 'ClassesController@edit')->name('admin_edit_class');
 
-	Route::get('/categories', 'CategoriesController@index')->name('admin_category');
+	//category
+	Route::get('/categories/list', 'CategoriesController@index')->name('admin_categories');
 
 	Route::post('/categories/create', 'CategoriesController@create')->name('admin_category_create');
 
@@ -46,5 +47,14 @@ Route::namespace('Admin')->prefix('admin')->middleware('auth')->group(function (
 	Route::post('/categories/update/{id}', 'CategoriesController@update')->name('admin_category_update');
 
 	Route::delete('categories/delete/{id}', 'CategoriesController@delete')->name('admin_category_delete');
+
+	// post
+	Route::get('/posts/list', 'PostsController@index')->name('admin_posts');
+
+	Route::match(['get', 'post'], '/posts/create', 'PostsController@create')->name('admin_create_post');
+
+	Route::match(['get', 'post'], '/posts/edit/{id}', 'PostsController@edit')->name('admin_edit_post');
+
+	Route::delete('posts/delete/{id}', 'PostsController@delete')->name('admin_post_delete');
 
 });

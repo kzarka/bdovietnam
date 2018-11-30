@@ -21,3 +21,4 @@ Route::post('categories/load', 'Api\CategoriesController@load')->name('categorie
 
 Route::get('categories/load_parent', 'Api\CategoriesController@loadParents')->name('categories_load_parents_api');
 
+Route::post('posts/load', 'Api\PostsController@load')->name('posts_load_api');

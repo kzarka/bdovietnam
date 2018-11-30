@@ -1,75 +1,52 @@
 <?php
-	$route = 'admin_create_class';
-	$isNew = !($class->id);
-	if(!$isNew) $route = 'admin_edit_class';
+	$route = 'admin_create_post';
+	$isNew = !($post->id);
+	if(!$isNew) $route = 'admin_edit_post';
 ?>
 @extends('admin.layouts.main')
 
-@section('title', ($isNew) ? 'New Class' : 'Edit Class')
-
-@section('content-header')
-    <h1>Breadcrumb</h1>
-@endsection
+@section('title', ($isNew) ? 'New Post' : 'Edit Post')
 
 @section('content')
-<div class="col-lg-7">
+<div class="col-lg-12">
     <div class="box box-info">                
     <!-- /.box-header -->
     	<div class="box-header with-border">
-            <h3 class="box-title">{{ ($isNew) ? 'New ' : 'Edit ' }}Class</h3>
+            <h3 class="box-title">{{ ($isNew) ? 'New ' : 'Edit ' }}Post</h3>
         </div>
-    	<form action="{{ route($route, $class->id) }}" method='POST' class="form-horizontal" id="class_form">
+    	<form action="{{ route($route, $post->id) }}" method='POST' class="" id="post_form">
     		{{ csrf_field() }}
-    		<input type="hidden" name="id" value="{{ $class->id }}">
+    		<input type="hidden" name="id" value="{{ $post->id }}">
+            <input type="hidden" name="author_id" value="{{ $post->author_id ?: Auth::id() }}">
         	<div class="box-body">
             	<div class="form-group">
-            		<label class="col-sm-2 control-label">Name</label>
-            		<div class="col-sm-10">
-            			<input type="text" name="name" class="form-control" value="{{ $class->name }}" placeholder="Name"/>
-            		</div>
+            		<label>Title</label>
+            		<input type="text" name="title" class="form-control" value="{{ $post->title }}" placeholder="Name"/>
             	</div>
-            	<div class="form-group">
-            		<label class="col-sm-2 control-label">Enable</label>
-            		<div class="col-sm-4">
-            			<select name="enable" class="form-control">
-            				<option value="1"{{ ($class->enable === 1) ? ' selected' : '' }}>Enable</option>
-            				<option value="0"{{ ($class->enable === 0) ? ' selected' : '' }}>Disable</option>
-            			</select>
-            		</div>
-
-            		<label class="col-sm-2 control-label">Awaken</label>
-            		<div class="col-sm-4">
-            			<select name="has_awk" class="form-control">
-            				<option value="1"{{ ($class->has_awk === 1) ? ' selected' : '' }}>Yes</option>
-            				<option value="0"{{ ($class->has_awk === 0) ? ' selected' : '' }}>Not Yet</option>
-            			</select>
-            		</div>
-            	</div>
-            	<div class="form-group">
-                  	<label class="col-sm-2 control-label">Normal Description</label>
-                  	<div class="col-sm-10">
-                  		<textarea class="form-control" rows="4" placeholder="Enter ..." name="desc_normal">{{ $class->desc_normal }}</textarea>
-                  	</div>
-                </div>
-                <div class="form-group">
-                  	<label class="col-sm-2 control-label">Awaken Description</label>
-                  	<div class="col-sm-10">
-                  		<textarea class="form-control" rows="4" placeholder="Enter ..." name="desc_awaken">{{ $class->desc_awaken }}</textarea>
-                  	</div>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">Normal Video</label>
-                    <div class="col-sm-10">
-                        <input type="text" name="normal_video" class="form-control" value="{{ $class->normal_video }}" placeholder="Name"/>
+                <div class="row">
+                    <div class="form-group col-xs-6">
+                        <label>Category</label>
+                        <select class="form-control select2" multiple="multiple" data-placeholder="Select a Category"
+                                    style="width: 100%;" name="category[]">
+                            @foreach ($categories as $category)
+                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                            @endforeach
+                        </select>
                     </div>
+                	<div class="form-group col-xs-6">
+                		<label>Public</label>
+            			<select name="public" class="form-control">
+            				<option value="1"{{ ($post->public === 1) ? ' selected' : '' }}>Enable</option>
+            				<option value="0"{{ ($post->public === 0) ? ' selected' : '' }}>Disable</option>
+            			</select>
+                	</div>
                 </div>
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">Awaken Video</label>
-                    <div class="col-sm-10">
-                        <input type="text" name="awaken_video" class="ckeditor" value="{{ $class->awaken_video }}" placeholder="Name"/>
-                    </div>
+            	<div class="form-group">
+                  	<label>Content</label>
+                  	<textarea class="ckeditor form-control" rows="4" placeholder="Enter ..." name="content">{{ $post->content }}</textarea>
                 </div>
-                <button type="button" class="pull-right btn btn-default" id="save">Save</button>
+                
+                <button type="button" class="pull-right btn btn-default" id="save_btn">Save</button>
         	</div>
         </form>
     <!-- /.box-body -->
@@ -79,4 +56,19 @@
 
 @section('js')
 <script src="{{ asset('admin/js/posts.js') }}"></script>
+<!-- jQuery 3 -->
+<script src="{{ asset('admin/js/ckeditor/ckeditor.js') }}"></script>
+<!-- Select 2 -->
+<script src="{{ asset('admin/js/select2.full.min.js') }}"></script>
+<script>
+    $(function () {
+        //Initialize Select2 Elements
+        $('.select2').select2()
+    });
+    @if ($selectedArray)
+    $(document).ready(function() {
+        $(".select2").val({{ $selectedArray }}).change();
+    });
+    @endif
+</script>
 @endsection

@@ -2,10 +2,6 @@
 
 @section('title', 'Classes')
 
-@section('content-header')
-    <h1>Classes</h1>
-@endsection
-
 @section('content')
 
 <input type="hidden" id="new_category_url" value="{{ route('admin_category_create') }}">
@@ -16,14 +12,15 @@
 <div class="col-xs-12">
     <div class="box">                
     <!-- /.box-header -->
-        <div class="box-body">
-            <div class="row">
-                <div class="col-xs-12 text-right">
-                    <div class="top-acction pull-right">
-                        <button class="search-submit btn btn-primary" type="submit" id="new_cat_btn">New Category</button>
-                    </div>
-                </div>
+        <div class="box-header with-border">
+            <h3 class="box-title">Table</h3>
+
+            <div class="box-tools pull-right">
+                <button class="search-submit btn btn-primary" type="submit" id="new_cat_btn">New Category</button>
             </div>
+        </div>
+        <div class="box-body">
+            
             <table id="categories_table" class="table table-hover">
                 <thead>
                     <tr>
