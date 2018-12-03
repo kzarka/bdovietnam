@@ -23,6 +23,14 @@ class PostsCategories extends Model
         'category_id'
     ];
 
+    public function post() {
+        return $this->hasOne('App\Models\Posts', 'id', 'post_id');
+    }
+
+    public function category() {
+        return $this->hasOne('App\Models\Categories', 'id', 'category_id');
+    }
+
     public static function updateItems($id, $categories) {
         if (!$categories) {
             self::where('post_id', $id)->delete();
@@ -33,7 +41,7 @@ class PostsCategories extends Model
         }
         $current_categories = self::select('category_id')->where('post_id', $id)->get();
         foreach ($current_categories as $current_category) {
-            if (!in_array($current_categories['category_id'], $categories)) {
+            if (!in_array($current_category['category_id'], $categories)) {
                 self::where('post_id', $id)
                     ->where('category_id', $current_categories['category_id'])
                     ->delete();

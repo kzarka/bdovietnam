@@ -65,7 +65,7 @@
         //Initialize Select2 Elements
         $('.select2').select2()
     });
-    @if ($selectedArray)
+    @if (isset($selectedArray))
     $(document).ready(function() {
         $(".select2").val({{ $selectedArray }}).change();
     });

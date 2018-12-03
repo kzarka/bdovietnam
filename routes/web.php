@@ -15,11 +15,16 @@ Route::get('/', function () {
     return view('index');
 })->name('home');
 
-Route::get('/classes', 'ClassesController@index')->name('classes');
+Route::get('/classes', 'ClassesController@index')->name('class');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+// category
+Route::get('/blog/{categoryIdentity}', 'CategoriesController@index')->name('category');
+// post
+Route::get('/blog/{categoryIdentity}/{postIdentity}', 'PostsController@index')->name('post');
 
 Route::namespace('Admin')->prefix('admin')->middleware('auth')->group(function () {
 

@@ -25,19 +25,20 @@ class PostsController extends Controller
     {
         $categories = Categories::all();
         $method = $request->method();
-        $posts = new Posts();
+        $post = new Posts();
         if($method == 'GET') {
-            return view('admin.posts.form', ['posts' => $posts, 'categories' => $categories]);
+            return view('admin.posts.form', ['post' => $post, 'categories' => $categories]);
         }
 
         $data = $request->all();
         \Log::info($data);
         //validate
-        $posts->fill($data);
+        $post->fill($data);
         if ($data['author_id']) {
             $post->author_id = $data['author_id'];
         }
-        $posts->save();
+        $post->save();
+        $data['category'] = (isset($data['category'])) ? $data['category'] : null;
         PostsCategories::updateItems($post->id, $data['category']);
         return redirect()->route('admin_posts');
     }
@@ -73,6 +74,7 @@ class PostsController extends Controller
         \Log::info($data);
         $post->fill($data);
         $post->save();
+        $data['category'] = (isset($data['category'])) ? $data['category'] : null;
         PostsCategories::updateItems($post->id, $data['category']);
         return redirect()->route('admin_posts');
     }

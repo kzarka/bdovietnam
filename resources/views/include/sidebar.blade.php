@@ -5,7 +5,7 @@
             <div class="feature-img-wrap relative">
                 <div class="feature-img relative">
                     <div class="overlay overlay-bg"></div>
-                    <img class="img-fluid" src="img/e1.jpg" alt="">
+                    <img class="img-fluid" src="{{ asset('img/e1.jpg') }}" alt="">
                 </div>
                 <ul class="tags">
                     <li><a href="#">Travel</a></li>
@@ -28,7 +28,7 @@
             <div class="post-lists">
                 <div class="single-post d-flex flex-row">
                     <div class="thumb">
-                        <img src="img/e2.jpg" alt="">
+                        <img src="{{ asset('img/e2.jpg') }}" alt="">
                     </div>
                     <div class="detail">
                         <a href="image-post.html"><h6>Help Finding Information
@@ -41,7 +41,7 @@
                 </div>
                 <div class="single-post d-flex flex-row">
                     <div class="thumb">
-                        <img src="img/e3.jpg" alt="">
+                        <img src="{{ asset('img/e3.jpg') }}" alt="">
                     </div>
                     <div class="detail">
                         <a href="image-post.html"><h6>Compatible Inkjet Cartr
@@ -54,7 +54,7 @@
                 </div>
                 <div class="single-post d-flex flex-row">
                     <div class="thumb">
-                        <img src="img/e4.jpg" alt="">
+                        <img src="{{ asset('img/e4.jpg') }}" alt="">
                     </div>
                     <div class="detail">
                         <a href="image-post.html"><h6>5 Tips For Offshore Soft
@@ -69,7 +69,7 @@
         </div>
     </div>
     <div class="single-sidebar-widget ads-widget">
-        <img class="img-fluid" src="img/sidebar-ads.jpg" alt="">
+        <img class="img-fluid" src="{{ asset('img/sidebar-ads.jpg') }}" alt="">
     </div>
     <div class="single-sidebar-widget newsletter-widget">
         <h6 class="title">Newsletter</h6>
@@ -94,7 +94,7 @@
         <h6 class="title">Most Popular</h6>
         <div class="single-list flex-row d-flex">
             <div class="thumb">
-                <img src="img/m1.jpg" alt="">
+                <img src="{{ asset('img/m1.jpg') }}" alt="">
             </div>
             <div class="details">
                 <a href="image-post.html">
@@ -109,7 +109,7 @@
         </div>
         <div class="single-list flex-row d-flex">
             <div class="thumb">
-                <img src="img/m2.jpg" alt="">
+                <img src="{{ asset('img/m2.jpg') }}" alt="">
             </div>
             <div class="details">
                 <a href="image-post.html">
@@ -124,7 +124,7 @@
         </div>
         <div class="single-list flex-row d-flex">
             <div class="thumb">
-                <img src="img/m3.jpg" alt="">
+                <img src="{{ asset('img/m3.jpg') }}" alt="">
             </div>
             <div class="details">
                 <a href="image-post.html">
@@ -139,7 +139,7 @@
         </div>
         <div class="single-list flex-row d-flex">
             <div class="thumb">
-                <img src="img/m4.jpg" alt="">
+                <img src="{{ asset('img/m4.jpg') }}" alt="">
             </div>
             <div class="details">
                 <a href="image-post.html">

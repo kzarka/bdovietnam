@@ -11,26 +11,21 @@ Breadcrumbs::for('about', function ($trail) {
     $trail->push('About', route('about'));
 });
 
-// Home > Blog
-Breadcrumbs::for('blog', function ($trail) {
-    $trail->parent('home');
-    $trail->push('Blog', route('blog'));
-});
-
 // Home > Classes
 Breadcrumbs::for('class', function ($trail) {
     $trail->parent('home');
-    $trail->push('Classes', route('classes'));
+    $trail->push('Classes', route('class'));
 });
 
 // Home > [Category]
 Breadcrumbs::for('category', function ($trail, $category) {
+    \Log::info($category);
     $trail->parent('home');
-    $trail->push($category->title, route('category', $category->id));
+    $trail->push($category->name, route('category', $category->slug ?: $category->id));
 });
 
 // Home > [Category] > [Post]
 Breadcrumbs::for('post', function ($trail, $post) {
     $trail->parent('category', $post->category);
-    $trail->push($post->title, route('post', $post->id));
+    $trail->push($post->title, route('post', ['categoryIdentity' => $post->category->slug ?: $post->category->id, 'postIdentity' => $post->slug ?: $post->id]));
 });

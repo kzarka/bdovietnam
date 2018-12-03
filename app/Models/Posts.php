@@ -21,4 +21,12 @@ class Posts extends Model
         'public',
         'content'
     ];
+
+    public function user() {
+        return $this->belongsTo('App\User', 'author_id');
+    }
+
+    public function categories() {
+        return $this->hasMany('App\Models\PostsCategories', 'id', 'post_id');
+    }
 }

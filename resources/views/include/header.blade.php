@@ -28,7 +28,7 @@
 				</a>
 			</div>
 			<div class="col-lg-8 col-md-8 col-sm-12 logo-right no-padding ads-banner">
-				<img class="img-fluid" src="img/banner-ad.jpg" alt="">
+				<img class="img-fluid" src="{{ asset('img/banner-ad.jpg') }}" alt="">
 			</div>
 		</div>
 	</div>
@@ -50,7 +50,7 @@
 				</ul>
 			</li>
 			<li><a href="about.html">About</a></li>
-			<li><a href="{{ route('classes') }}">Classes</a></li>
+			<li><a href="{{ route('class') }}">Classes</a></li>
 			<li><a href="contact.html">Contact</a></li>
 		</ul>
 		</nav><!-- #nav-menu-container -->
