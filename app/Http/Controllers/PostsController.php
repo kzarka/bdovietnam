@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Event;
 use Illuminate\Http\Request;
 use App\Models\PostsCategories;
 use App\Models\Categories;
@@ -38,6 +39,9 @@ class PostsController extends Controller
         }
         if ($post) {
             $post->category = $category;
+            Event::fire('posts.view', $post);
+        } else {
+            $post['category'] = $category;
         }
 
         $breadcrumb = [

@@ -15,7 +15,7 @@
             <h3 class="box-title">Table</h3>
 
             <div class="box-tools pull-right">
-                <button class="search-submit btn btn-primary" type="submit" id="new_cat_btn">New Category</button>
+                <a href="{{ route('admin_create_post') }}" class="search-submit btn btn-primary">New Post</a>
             </div>
         </div>
         <div class="box-body">

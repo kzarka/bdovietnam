@@ -41,6 +41,10 @@
             			</select>
                 	</div>
                 </div>
+                <div class="form-group">
+                    <label>Slug</label>
+                    <input type="text" name="slug" class="form-control" value="{{ $post->slug }}" placeholder="Slug"/>
+                </div>
             	<div class="form-group">
                   	<label>Content</label>
                   	<textarea class="ckeditor form-control" rows="4" placeholder="Enter ..." name="content">{{ $post->content }}</textarea>

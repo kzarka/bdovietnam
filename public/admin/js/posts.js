@@ -10,13 +10,23 @@ $(document).ready(function() {
         }
     });
 
-    $('input[name=name]').on('change', function (){
-        let slug = toSlug($('input[name=name]').val());
+    $('input[name=title]').on('change', function (){
+        let slug = toSlug($(this).val());
         $('input[name=slug]').val(slug);
     });
 
     $('#save_btn').on('click', function (e){
         e.preventDefault();
+        if(!$('input[name=title]').val()) {
+            $('input[name=title]').addClass('border-red');
+            return;
+        }
+        if(!$('input[name=slug]').val()) {
+            $('input[name=slug]').addClass('border-red');
+            return;
+        }
+        let parent = $(this).closest('.box-body');
+        parent.find('input').removeClass('border-red');
         $('#post_form').submit();
         return;
     });

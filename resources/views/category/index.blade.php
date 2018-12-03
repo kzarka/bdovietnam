@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', $category->name)
+@section('title', isset($category) ? $category->name : 'Category List')
 
 @section('content')
 @if (isset($category))

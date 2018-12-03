@@ -22,9 +22,12 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 
 // category
+Route::get('/blog/', 'CategoriesController@index')->name('category');
+
 Route::get('/blog/{categoryIdentity}', 'CategoriesController@index')->name('category');
 // post
-Route::get('/blog/{categoryIdentity}/{postIdentity}', 'PostsController@index')->name('post');
+Route::get('/blog/{categoryIdentity}/{postIdentity}', 'PostsController@index')->name('post')
+	->middleware('postcountfilter');
 
 Route::namespace('Admin')->prefix('admin')->middleware('auth')->group(function () {
 

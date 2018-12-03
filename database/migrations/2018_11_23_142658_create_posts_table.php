@@ -20,6 +20,7 @@ class CreatePostsTable extends Migration
             $table->text('content')->nullable();
             $table->tinyInteger('public')->default(0);
             $table->smallInteger('author_id')->nullable();
+            $table->integer('view_count')->default(0);
             $table->timestamps();
         });
     }

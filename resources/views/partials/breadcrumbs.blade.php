@@ -8,7 +8,7 @@
             @if ($breadcrumb->url && !$loop->last)
             	<a href="{{ $breadcrumb->url }}" class="btn btn-breadcrumb-primary btn-sm">{{ $breadcrumb->title }}</a>
             @else
-                <a class="btn btn-breadcrumb-primary btn-sm active" style="color: #fff;">{{ $breadcrumb->title }}</a>
+                <a class="btn btn-breadcrumb-primary btn-sm" style="color: #fff;">{{ $breadcrumb->title }}</a>
             @endif
 
         @endforeach

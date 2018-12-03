@@ -19,7 +19,8 @@ class Posts extends Model
     protected $fillable = [
         'title',
         'public',
-        'content'
+        'content',
+        'slug'
     ];
 
     public function user() {

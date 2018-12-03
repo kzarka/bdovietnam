@@ -1,9 +1,10 @@
 @extends('layouts.main')
 
-@section('title', $post->title)
+@section('title', isset($post->id) ? $post->title : 'Post not found' )
 
 @section('content')
 <div class="single-post-wrap">
+    @if (isset($post->id))
     <div class="content-wrap">
         <ul class="tags">
             <li><a href="{{ route('category', $post->category->slug ?: $post->category->id) }}">{{ $post->category->name }}</a></li>
@@ -108,7 +109,8 @@
             </div>
             <a href="#" class="primary-btn text-uppercase">Post Comment</a>
         </form>
-</div>
+    </div>
+    @endif
 </div>
 @endsection
 
