@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-})->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/classes', 'ClassesController@index')->name('class');
 

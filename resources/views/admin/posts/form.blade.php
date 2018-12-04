@@ -45,9 +45,17 @@
                     <label>Slug</label>
                     <input type="text" name="slug" class="form-control" value="{{ $post->slug }}" placeholder="Slug"/>
                 </div>
+                <div class="form-group">
+                    <label>Thumbnail</label>
+                    <input type="text" name="thumbnail" class="form-control" value="{{ $post->thumbnail }}" placeholder="Thumbnail"/>
+                </div>
             	<div class="form-group">
                   	<label>Content</label>
                   	<textarea class="ckeditor form-control" rows="4" placeholder="Enter ..." name="content">{{ $post->content }}</textarea>
+                </div>
+                <div class="form-group">
+                    <label>Excert</label>
+                    <textarea class="form-control" rows="4" placeholder="Enter ..." name="excert">{{ $post->excert }}</textarea>
                 </div>
                 
                 <button type="button" class="pull-right btn btn-default" id="save_btn">Save</button>

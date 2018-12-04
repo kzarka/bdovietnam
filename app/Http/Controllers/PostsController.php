@@ -27,7 +27,7 @@ class PostsController extends Controller
         } else {
             $category = $category->where('slug', $categoryIdentity)->first();
         }
-        if (!$category) {
+        if (!$category && $categoryIdentity != Categories::DEFAULT_CATEGORY) {
             return redirect()->route('category', '');
         }
 
@@ -43,7 +43,6 @@ class PostsController extends Controller
         } else {
             $post['category'] = $category;
         }
-
         $breadcrumb = [
             'name' => 'post',
             'object' => $post

@@ -3,18 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Categories;
+use App\Models\Posts;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
 
     /**
      * Show the application dashboard.
@@ -23,6 +16,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $news = Posts::getPostsByCategory(1, 3);
+        $lastest = Posts::getLastestPosts();
+        $popular = Posts::getPopularPosts();
+        return view('index', [
+            'lastest' => $lastest,
+            'popular' => $popular,
+            'news'     => $news
+        ]);
     }
 }
