@@ -11,7 +11,7 @@
         <div class="col-lg-5 post-left">
             <div class="feature-img relative">
                 <div class="overlay overlay-bg"></div>
-                <img class="img-fluid" src="img/l1.jpg" alt="">
+                <img class="img-fluid" src="{{ $post->thumbnail }}" alt="">
             </div>
             <ul class="tags">
                 <li><a href="{{ route('category', $post->firstCategoryName()) }}">
@@ -30,7 +30,7 @@
                 <li><a href="#"><span class="lnr lnr-bubble"></span>06 Comments</a></li>
             </ul>
             <p class="excert">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
+                {{ $post->excert }}
             </p>
         </div>
     </div>
