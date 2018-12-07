@@ -2,6 +2,7 @@
 
 namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Collection;
 
 class Posts extends Model
 {
@@ -131,9 +132,14 @@ class Posts extends Model
         }
         if($category) {
             $posts = $category->posts;
-        }
-        if($current_post_id) {
-            $posts = $posts->where('id', '<>', $current_post_id);
+            if($current_post_id) {
+                $posts = $posts->where('post_id', '<>', $current_post_id);
+            }
+            $result = new Collection();
+            foreach ($posts as $post) {
+                $result->push($post->post);
+            }
+            $posts = $result->where('public', self::PUBLIC_POST);
         }
         return $posts->take($limit);
     }

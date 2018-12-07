@@ -11,24 +11,27 @@
             <div class="feature-img-wrap relative">
                 <div class="feature-img relative">
                     <div class="overlay overlay-bg"></div>
-                    <img class="img-fluid" src="{{ asset('img/e1.jpg') }}" alt="">
+                    <img class="img-fluid" src="{{ $post->thumbnail }}" alt="">
                 </div>
                 <ul class="tags">
-                    <li><a href="#">Travel</a></li>
+                    <li>
+                        <a href="{{ route('category', $post->firstCategoryName()) }}">
+                            {{ $post->firstCategoryName() }}
+                        </a>
+                    </li>
                 </ul>
             </div>
             <div class="details">
-                <a href="image-post.html">
-                    <h4 class="mt-20">A Discount Toner Cartridge Is
-                    Better Than Ever.</h4>
+                <a href="{{ $post->url() }}">
+                    <h4 class="mt-20">{{ $post->title }}.</h4>
                 </a>
                 <ul class="meta">
-                    <li><a href="#"><span class="lnr lnr-user"></span>Mark wiens</a></li>
+                    <li><a href="#"><span class="lnr lnr-user"></span>{{ $post->user->name }}</a></li>
                     <li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
                     <li><a href="#"><span class="lnr lnr-bubble"></span>06 </a></li>
                 </ul>
                 <p class="excert">
-                    Lorem ipsum dolor sit amet, consecteturadip isicing elit, sed do eiusmod tempor incididunt ed do eius.
+                    {{ $post->excert }}
                 </p>
             </div>
             @endif
@@ -38,11 +41,10 @@
             <div class="post-lists">
                 <div class="single-post d-flex flex-row">
                     <div class="thumb">
-                        <img src="{{ asset('img/e2.jpg') }}" alt="">
+                        <img src="{{ $post->thumbnail }}" alt="">
                     </div>
                     <div class="detail">
-                        <a href="image-post.html"><h6>Help Finding Information
-                        Online is so easy</h6></a>
+                        <a href="{{ $post->url() }}"><h6>{{ $post->title }}</h6></a>
                         <ul class="meta">
                             <li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
                             <li><a href="#"><span class="lnr lnr-bubble"></span>06</a></li>
