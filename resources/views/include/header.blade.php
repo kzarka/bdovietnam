@@ -22,13 +22,10 @@
 	<div class="container">
 		<div class="row justify-content-between align-items-center">
 			<div class="col-lg-4 col-md-4 col-sm-12 logo-left no-padding">
-				<a href="/">
-					BDOVietnam
-					<!-- <img class="img-fluid" src="img/logo.png" alt=""> -->
-				</a>
+				<a href="/"><img class="img-fluid" src="{{ $logo->url ?: $logo->default_url }}" alt="BDOVietnam"></a>
 			</div>
 			<div class="col-lg-8 col-md-8 col-sm-12 logo-right no-padding ads-banner">
-				<img class="img-fluid" src="{{ asset('img/banner-ad.jpg') }}" alt="">
+				<img class="img-fluid" src="{{ $top_ads->url ?: $top_ads->default_url }}" alt="">
 			</div>
 		</div>
 	</div>

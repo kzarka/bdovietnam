@@ -42,7 +42,7 @@
 
 <!-- Start banner-ads Area -->
 <div class="col-lg-12 ad-widget-wrap mt-30 mb-30">
-    <img class="img-fluid" src="img/banner-ad.jpg" alt="">
+    <img class="img-fluid" src="{{ $middle_ads->url ?: $middle_ads->default_url }}" alt="">
 </div>
 <!-- End banner-ads Area -->
 

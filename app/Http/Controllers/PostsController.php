@@ -49,6 +49,7 @@ class PostsController extends Controller
         ];
         return view('post.index', [
             'post' => $post,
+            'category' => $category,
             'breadcrumb' => $breadcrumb
         ]);
     }

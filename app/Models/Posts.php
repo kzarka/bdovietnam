@@ -121,5 +121,20 @@ class Posts extends Model
         if(!$category) return false;
         $posts = $category->posts->take($limit);
         return $posts;
-    } 
+    }
+
+    public static function getRandomPosts ($category_id = null, $current_post_id = null, $limit = 5) {
+        $posts = self::public()->exclude('content')->inRandomOrder()->get();
+        $category = null;
+        if($category_id) {
+            $category = Categories::find($category_id);
+        }
+        if($category) {
+            $posts = $category->posts;
+        }
+        if($current_post_id) {
+            $posts = $posts->where('id', '<>', $current_post_id);
+        }
+        return $posts->take($limit);
+    }
 }

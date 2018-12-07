@@ -1,7 +1,13 @@
+<?php
+
+?>
 <div class="sidebars-area">
     <div class="single-sidebar-widget editors-pick-widget">
-        <h6 class="title">Editor’s Pick</h6>
+        <h6 class="title">{{ $is_post ? 'Cùng Chủ Đề' : 'Random' }}</h6>
         <div class="editors-pick-post">
+            @if ($top_sidebar_posts->count() > 0)
+
+            @php $post_first = $top_sidebar_posts->shift(); @endphp
             <div class="feature-img-wrap relative">
                 <div class="feature-img relative">
                     <div class="overlay overlay-bg"></div>
@@ -25,6 +31,10 @@
                     Lorem ipsum dolor sit amet, consecteturadip isicing elit, sed do eiusmod tempor incididunt ed do eius.
                 </p>
             </div>
+            @endif
+
+            @if ($top_sidebar_posts->count() > 0)
+            @foreach ($top_sidebar_posts as $post)
             <div class="post-lists">
                 <div class="single-post d-flex flex-row">
                     <div class="thumb">
@@ -39,37 +49,13 @@
                         </ul>
                     </div>
                 </div>
-                <div class="single-post d-flex flex-row">
-                    <div class="thumb">
-                        <img src="{{ asset('img/e3.jpg') }}" alt="">
-                    </div>
-                    <div class="detail">
-                        <a href="image-post.html"><h6>Compatible Inkjet Cartr
-                        world famous</h6></a>
-                        <ul class="meta">
-                            <li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
-                            <li><a href="#"><span class="lnr lnr-bubble"></span>06</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="single-post d-flex flex-row">
-                    <div class="thumb">
-                        <img src="{{ asset('img/e4.jpg') }}" alt="">
-                    </div>
-                    <div class="detail">
-                        <a href="image-post.html"><h6>5 Tips For Offshore Soft
-                        Development </h6></a>
-                        <ul class="meta">
-                            <li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
-                            <li><a href="#"><span class="lnr lnr-bubble"></span>06</a></li>
-                        </ul>
-                    </div>
-                </div>
+                @endforeach
+                @endif
             </div>
         </div>
     </div>
     <div class="single-sidebar-widget ads-widget">
-        <img class="img-fluid" src="{{ asset('img/sidebar-ads.jpg') }}" alt="">
+        <img class="img-fluid" src="{{ $sidebar_ads->url ?: $sidebar_ads->default_url }}" alt="">
     </div>
     <div class="single-sidebar-widget newsletter-widget">
         <h6 class="title">Newsletter</h6>
@@ -92,14 +78,14 @@
     </div>
     <div class="single-sidebar-widget most-popular-widget">
         <h6 class="title">Most Popular</h6>
+        @foreach ($popular as $post)
         <div class="single-list flex-row d-flex">
             <div class="thumb">
-                <img src="{{ asset('img/m1.jpg') }}" alt="">
+                <img src="{{ $post->thumbnail }}" alt="">
             </div>
             <div class="details">
-                <a href="image-post.html">
-                    <h6>Help Finding Information
-                    Online is so easy</h6>
+                <a href="{{ $post->url() }}">
+                    <h6>{{ $post->title }}</h6>
                 </a>
                 <ul class="meta">
                     <li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
@@ -107,51 +93,7 @@
                 </ul>
             </div>
         </div>
-        <div class="single-list flex-row d-flex">
-            <div class="thumb">
-                <img src="{{ asset('img/m2.jpg') }}" alt="">
-            </div>
-            <div class="details">
-                <a href="image-post.html">
-                    <h6>Compatible Inkjet Cartr
-                    world famous</h6>
-                </a>
-                <ul class="meta">
-                    <li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
-                    <li><a href="#"><span class="lnr lnr-bubble"></span>06</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="single-list flex-row d-flex">
-            <div class="thumb">
-                <img src="{{ asset('img/m3.jpg') }}" alt="">
-            </div>
-            <div class="details">
-                <a href="image-post.html">
-                    <h6>5 Tips For Offshore Soft
-                    Development </h6>
-                </a>
-                <ul class="meta">
-                    <li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
-                    <li><a href="#"><span class="lnr lnr-bubble"></span>06</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="single-list flex-row d-flex">
-            <div class="thumb">
-                <img src="{{ asset('img/m4.jpg') }}" alt="">
-            </div>
-            <div class="details">
-                <a href="image-post.html">
-                    <h6>5 Tips For Offshore Soft
-                    Development </h6>
-                </a>
-                <ul class="meta">
-                    <li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
-                    <li><a href="#"><span class="lnr lnr-bubble"></span>06</a></li>
-                </ul>
-            </div>
-        </div>
+        @endforeach
     </div>
     <div class="single-sidebar-widget social-network-widget">
         <h6 class="title">Social Networks</h6>

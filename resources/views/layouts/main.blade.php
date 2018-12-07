@@ -1,4 +1,6 @@
 <?php
+	use App\Models\ImagesSetting;
+	use App\Models\Posts;
 	/* Specific page contain sidebar or not */ 
 	$sidebar = (bool)(isset($sidebar) ? $sidebar : true);
 	/* Specific page breadcrumb */ 
@@ -9,7 +11,19 @@
 			'object' => ''
 		];
 	}
+	$logo = ImagesSetting::find(1);
+	$top_ads = ImagesSetting::find(2);
+	$sidebar_ads = ImagesSetting::find(3);
+	$random_posts = Posts::getRandomPosts();
+	$popular = Posts::getPopularPosts();
+	$top_sidebar_posts = $random_posts;
+	$is_post = false;
+	if(isset($category) && isset($post) && $category->id) {
+	    $is_post = true;
+	    $top_sidebar_posts = Posts::getRandomPosts($category->id, $post->id);
+	}
 ?>
+
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}" class="no-js">
 	<head>

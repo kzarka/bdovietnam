@@ -14,3 +14,8 @@
     font-size: 17px;
     font-family: "Times New Roman", Times, serif;
 }
+
+.thumb img {
+    width: 100px;
+    height: 80px;
+}
