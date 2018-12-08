@@ -11,27 +11,27 @@
             <div class="feature-img-wrap relative">
                 <div class="feature-img relative">
                     <div class="overlay overlay-bg"></div>
-                    <img class="img-fluid" src="{{ $post->thumbnail }}" alt="">
+                    <img class="img-fluid" src="{{ $post_first->thumbnail }}" alt="">
                 </div>
                 <ul class="tags">
                     <li>
-                        <a href="{{ route('category', $post->firstCategoryName()) }}">
-                            {{ $post->firstCategoryName() }}
+                        <a href="{{ route('category', $post_first->firstCategoryName()) }}">
+                            {{ $post_first->firstCategoryName() }}
                         </a>
                     </li>
                 </ul>
             </div>
             <div class="details">
-                <a href="{{ $post->url() }}">
-                    <h4 class="mt-20">{{ $post->title }}.</h4>
+                <a href="{{ $post_first->url() }}">
+                    <h4 class="mt-20">{{ $post_first->title }}.</h4>
                 </a>
                 <ul class="meta">
-                    <li><a href="#"><span class="lnr lnr-user"></span>{{ $post->user->name }}</a></li>
+                    <li><a href="#"><span class="lnr lnr-user"></span>{{ $post_first->user->name }}</a></li>
                     <li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
                     <li><a href="#"><span class="lnr lnr-bubble"></span>06 </a></li>
                 </ul>
                 <p class="excert">
-                    {{ $post->excert }}
+                    {{ $post_first->excert }}
                 </p>
             </div>
             @endif
