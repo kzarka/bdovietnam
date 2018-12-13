@@ -13,5 +13,7 @@ class CategoriesTableSeeder extends Seeder
     public function run()
     {
         Categories::create(['name' => 'News', 'active' => 1, 'slug' => 'news']);
+        Categories::create(['name' => 'Guides', 'active' => 1, 'slug' => 'guides']);
+        Categories::create(['name' => 'Lifeskill', 'active' => 1, 'parent_id' => '2', 'slug' => 'life-skill']);
     }
 }

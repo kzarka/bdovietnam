@@ -11,7 +11,7 @@
             <div class="col-lg-8 top-post-left">
                 <div class="feature-image-thumb relative">
                     <div class="overlay overlay-bg"></div>
-                    <img class="img-fluid" src="img/top-post1.jpg" alt="">
+                    <img class="img-fluid" src="{{ $first_news->thumbnail }}" alt="">
                 </div>
                 <div class="top-post-details">
                     <ul class="tags">
@@ -26,7 +26,7 @@
                     </a>
                     <ul class="meta">
                         <li><a href="#"><span class="lnr lnr-user"></span>{{ $first_news->user->name }}</a></li>
-                        <li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
+                        <li><a href="#"><span class="lnr lnr-calendar-full"></span>{{ $first_news->created_at }}</a></li>
                         <li><a href="#"><span class="lnr lnr-bubble"></span>06 Comments</a></li>
                     </ul>
                 </div>
@@ -39,7 +39,7 @@
                 <div class="single-top-post">
                     <div class="feature-image-thumb relative">
                         <div class="overlay overlay-bg"></div>
-                        <img class="img-fluid" src="img/top-post2.jpg" alt="">
+                        <img class="img-fluid" src="{{ $post->post->thumbnail }}" alt="">
                     </div>
                     <div class="top-post-details">
                         <ul class="tags">
@@ -54,7 +54,7 @@
                         </a>
                         <ul class="meta">
                             <li><a href="#"><span class="lnr lnr-user"></span>{{ $post->post->user->name }}</a></li>
-                            <li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
+                            <li><a href="#"><span class="lnr lnr-calendar-full"></span>{{ $post->created_at }}</a></li>
                             <li><a href="#"><span class="lnr lnr-bubble"></span>06 Comments</a></li>
                         </ul>
                     </div>

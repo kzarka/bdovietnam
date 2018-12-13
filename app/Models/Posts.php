@@ -143,4 +143,21 @@ class Posts extends Model
         }
         return $posts->take($limit);
     }
+
+    public function getCreatedAtAttribute($value) {
+        $dateString = \Carbon\Carbon::parse($value)->format('d M, Y');
+        $dateString = str_replace("Jan", "Tháng 1", $dateString);
+        $dateString = str_replace("Feb", "Tháng 2", $dateString);
+        $dateString = str_replace("Mar", "Tháng 3", $dateString);
+        $dateString = str_replace("Apr", "Tháng 4", $dateString);
+        $dateString = str_replace("May", "Tháng 5", $dateString);
+        $dateString = str_replace("Jun", "Tháng 6", $dateString);
+        $dateString = str_replace("Jul", "Tháng 7", $dateString);
+        $dateString = str_replace("Aug", "Tháng 8", $dateString);
+        $dateString = str_replace("Sep", "Tháng 9", $dateString);
+        $dateString = str_replace("Oct", "Tháng 10", $dateString);
+        $dateString = str_replace("Nov", "Tháng 11", $dateString);
+        $dateString = str_replace("Dec", "Tháng 12", $dateString);
+        return $dateString;
+    }
 }

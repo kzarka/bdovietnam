@@ -18,6 +18,12 @@ Breadcrumbs::for('class', function ($trail) {
     $trail->push('Classes', route('class'));
 });
 
+// Home > [Category List]
+Breadcrumbs::for('category_list', function ($trail, $category) {
+    $trail->parent('home');
+    $trail->push('Category', route('category_list'));
+});
+
 // Home > [Category]
 Breadcrumbs::for('category', function ($trail, $category) {
     $trail->parent('home');

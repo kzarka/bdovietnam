@@ -5,7 +5,7 @@
 @section('content')
 <!-- Start latest-post Area -->
 <div class="latest-post-wrap">
-    <h4 class="cat-title">Latest News</h4>
+    <h4 class="cat-title">Bài Mới Nhất</h4>
     @forelse ($lastest as $post)
     <div class="single-latest-post row align-items-center">
         <div class="col-lg-5 post-left">
@@ -26,7 +26,7 @@
             </a>
             <ul class="meta">
                 <li><a href="#"><span class="lnr lnr-user"></span>{{ $post->user->name }}</a></li>
-                <li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
+                <li><a href="#"><span class="lnr lnr-calendar-full"></span>{{ $post->created_at }}</a></li>
                 <li><a href="#"><span class="lnr lnr-bubble"></span>06 Comments</a></li>
             </ul>
             <p class="excert">
@@ -48,14 +48,14 @@
 
 <!-- Start popular-post Area -->
 <div class="popular-post-wrap">
-    <h5 class="title">Popular Posts</h5>
+    <h5 class="title">Phổ Biến</h5>
     @if ($popular->count() > 0)
 
     @php $popular_first = $popular->shift(); @endphp
     <div class="feature-post relative">
         <div class="feature-img relative">
             <div class="overlay overlay-bg"></div>
-            <img class="img-fluid" src="img/f1.jpg" alt="">
+            <img class="img-fluid" src="{{ $popular_first->thumbnail }}" alt="">
         </div>
         <div class="details">
             <ul class="tags">
@@ -70,7 +70,7 @@
             </a>
             <ul class="meta">
                 <li><a href="#"><span class="lnr lnr-user"></span>{{ $popular_first->user->name }}</a></li>
-                <li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
+                <li><a href="#"><span class="lnr lnr-calendar-full"></span>{{ $post->created_at }}</a></li>
                 <li><a href="#"><span class="lnr lnr-bubble"></span>06 Comments</a></li>
             </ul>
         </div>
@@ -84,7 +84,7 @@
             <div class="feature-img-wrap relative">
                 <div class="feature-img relative">
                     <div class="overlay overlay-bg"></div>
-                    <img class="img-fluid" src="img/f2.jpg" alt="">
+                    <img class="img-fluid" src="{{ $post->thumbnail }}" alt="">
                 </div>
                 <ul class="tags">
                     <li>
@@ -100,7 +100,7 @@
                 </a>
                 <ul class="meta">
                     <li><a href="#"><span class="lnr lnr-user"></span>{{ $post->user->name }}</a></li>
-                    <li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
+                    <li><a href="#"><span class="lnr lnr-calendar-full"></span>{{ $post->created_at }}</a></li>
                     <li><a href="#"><span class="lnr lnr-bubble"></span>06 </a></li>
                 </ul>
                 <p class="excert">

@@ -13,19 +13,23 @@
 
 Route::get('/', 'HomeController@index')->name('home');
 
-Route::get('/classes', 'ClassesController@index')->name('class');
+Route::get('/classes.html', 'ClassesController@index')->name('class');
+
+Route::get('/about.html', 'HomeController@index')->name('about');
+
+Route::get('/contact.html', 'HomeController@index')->name('contact');
+
+// category
+Route::get('/blog/', 'CategoriesController@index')->name('category_list');
+
+Route::get('/blog/{categoryIdentity}.html', 'CategoriesController@index')->name('category');
+// post
+Route::get('/blog/{categoryIdentity}/{postIdentity}.html', 'PostsController@index')->name('post')
+	->middleware('postcountfilter');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
-
-// category
-Route::get('/blog/', 'CategoriesController@index')->name('category');
-
-Route::get('/blog/{categoryIdentity}', 'CategoriesController@index')->name('category');
-// post
-Route::get('/blog/{categoryIdentity}/{postIdentity}', 'PostsController@index')->name('post')
-	->middleware('postcountfilter');
 
 Route::namespace('Admin')->prefix('admin')->middleware('auth')->group(function () {
 

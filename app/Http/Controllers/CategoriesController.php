@@ -16,7 +16,7 @@ class CategoriesController extends Controller
     public function index(Request $request, $categoryIdentity = null)
     {
         $breadcrumb = [
-            'name' => 'category',
+            'name' => 'category_list',
             'object' => ''
         ];
         if (!$categoryIdentity) {
@@ -26,7 +26,10 @@ class CategoriesController extends Controller
                 'breadcrumb' => $breadcrumb
             ]);
         }
-
+        $breadcrumb = [
+            'name' => 'category',
+            'object' => ''
+        ];
         $category = new Categories();
         if (is_numeric($categoryIdentity)) {
             $category = $category->where('id', $categoryIdentity)->first();

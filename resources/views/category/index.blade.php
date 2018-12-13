@@ -32,7 +32,7 @@
         </div>
     </div>
     @empty
-    <p>No users</p>
+
     @endforelse
     
     <div class="load-more">

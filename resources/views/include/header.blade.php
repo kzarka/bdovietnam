@@ -1,3 +1,7 @@
+<?php
+use App\Models\Categories;
+$guide_categories = Categories::find(2)->children;
+?>
 <div class="header-top">
 	<div class="container">
 		<div class="row">
@@ -35,20 +39,17 @@
 		<nav id="nav-menu-container">
 			<ul class="nav-menu">
 				<li class="menu-active"><a href="/">Home</a></li>
-				<li><a href="archive.html">Archive</a></li>
-				<li><a href="category.html">Category</a></li>
-				<li class="menu-has-children"><a href="">Post Types</a>
+				<li><a href="{{ route('category_list') }}">Category</a></li>
+				<li class="menu-has-children"><a href="#">Hướng Dẫn</a>
 				<ul>
-					<li><a href="standard-post.html">Standard Post</a></li>
-					<li><a href="image-post.html">Image Post</a></li>
-					<li><a href="gallery-post.html">Gallery Post</a></li>
-					<li><a href="video-post.html">Video Post</a></li>
-					<li><a href="audio-post.html">Audio Post</a></li>
+					@foreach ($guide_categories as $category)
+					<li><a href="{{ route('category', $category->slug ?: $category->id) }}">{{ $category->name }}</a></li>
+					@endforeach
 				</ul>
 			</li>
-			<li><a href="about.html">About</a></li>
+			<li><a href="{{ route('about') }}">About</a></li>
 			<li><a href="{{ route('class') }}">Classes</a></li>
-			<li><a href="contact.html">Contact</a></li>
+			<li><a href="{{ route('contact') }}">Contact</a></li>
 		</ul>
 		</nav><!-- #nav-menu-container -->
 		<div class="navbar-right">
