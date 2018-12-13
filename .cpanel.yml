@@ -3,5 +3,5 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/bdovietn/public_html/
     - /bin/cp * $DEPLOYPATH
-    - cd $DEPLOYPATH/public/
-    - /bin/cp -r * $DEPLOYPATH
+    - cd $DEPLOYPATH
+    - /bin/cp -r public/* $DEPLOYPATH
