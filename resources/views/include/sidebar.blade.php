@@ -51,9 +51,9 @@
                         </ul>
                     </div>
                 </div>
-                @endforeach
-                @endif
             </div>
+            @endforeach
+            @endif
         </div>
     </div>
     <div class="single-sidebar-widget ads-widget">
