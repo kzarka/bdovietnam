@@ -137,7 +137,7 @@ $(document).ready(function() {
                 { 
                     "data": "public",
                     "render": function (data, type, row, meta) {
-                        if(data === 1) {
+                        if(data == 1) {
                             return 'Yes';
                         }
                         return 'No';

@@ -36,8 +36,8 @@
                 	<div class="form-group col-xs-6">
                 		<label>Public</label>
             			<select name="public" class="form-control">
-            				<option value="1"{{ ($post->public === 1) ? ' selected' : '' }}>Enable</option>
-            				<option value="0"{{ ($post->public === 0) ? ' selected' : '' }}>Disable</option>
+            				<option value="1"{{ ($post->public == 1) ? ' selected' : '' }}>Enable</option>
+            				<option value="0"{{ ($post->public == 0) ? ' selected' : '' }}>Disable</option>
             			</select>
                 	</div>
                 </div>
