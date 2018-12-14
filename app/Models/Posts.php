@@ -131,7 +131,10 @@ class Posts extends Model
     public static function getPostsByCategory($id = '1', $limit = 3) {
         $category = Categories::find($id);
         if(!$category) return false;
-        $posts = $category->posts->take($limit);
+        $posts = $category->posts;
+        $posts = $posts->filter(function ($item, $key) {
+            if($item->public === 1) return $item;
+        })->take($limit);
         return $posts;
     }
 
