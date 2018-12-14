@@ -116,7 +116,7 @@
 
 </div>
 <!-- End popular-post Area -->
-<!-- Start relavent-story-post Area -->
+<!-- Start relavent-story-post Area
 <div class="relavent-story-post-wrap mt-30">
     <h5 class="title">Relavent Stories</h5>
     <div class="relavent-story-list-wrap">
@@ -197,5 +197,5 @@
         </div>
     </div>
 </div>
-<!-- End relavent-story-post Area -->
+     End relavent-story-post Area -->
 @endsection
