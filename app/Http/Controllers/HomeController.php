@@ -21,7 +21,6 @@ class HomeController extends Controller
         $news = Posts::getPostsByCategory(1, 3);
         $lastest = Posts::getLastestPosts();
         $popular = Posts::getPopularPosts();
-        
         return view('index', [
             'middle_ads' => $middle_ads,
             'lastest' => $lastest,

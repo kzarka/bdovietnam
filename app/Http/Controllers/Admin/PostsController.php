@@ -37,6 +37,9 @@ class PostsController extends Controller
         if ($data['author_id']) {
             $post->author_id = $data['author_id'];
         }
+        if ($data['thumbnail']) {
+            $post->thumbnail = $data['thumbnail'];
+        }
         $post->save();
         $data['category'] = (isset($data['category'])) ? $data['category'] : null;
         PostsCategories::updateItems($post->id, $data['category']);
@@ -71,7 +74,9 @@ class PostsController extends Controller
         if ($data['author_id']) {
             $post->author_id = $data['author_id'];
         }
-        \Log::info($data);
+        if ($data['thumbnail']) {
+            $post->thumbnail = $data['thumbnail'];
+        }
         $post->fill($data);
         $post->save();
         $data['category'] = (isset($data['category'])) ? $data['category'] : null;

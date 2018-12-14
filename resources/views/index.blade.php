@@ -6,7 +6,9 @@
 <!-- Start latest-post Area -->
 <div class="latest-post-wrap">
     <h4 class="cat-title">Bài Mới Nhất</h4>
-    @forelse ($lastest as $post)
+    @if ($lastest)
+
+    @foreach ($lastest as $post)
     <div class="single-latest-post row align-items-center">
         <div class="col-lg-5 post-left">
             <div class="feature-img relative">
@@ -34,9 +36,9 @@
             </p>
         </div>
     </div>
-    @empty
+    @endforeach
 
-    @endforelse
+    @endif
 </div>
 <!-- End latest-post Area -->
 
@@ -49,7 +51,7 @@
 <!-- Start popular-post Area -->
 <div class="popular-post-wrap">
     <h5 class="title">Phổ Biến</h5>
-    @if ($popular->count() > 0)
+    @if ($popular && $popular->count() > 0)
 
     @php $popular_first = $popular->shift(); @endphp
     <div class="feature-post relative">
@@ -77,7 +79,7 @@
     </div>
     @endif
 
-    @if ($popular->count() > 0)
+    @if ($popular && $popular->count() > 0)
     <div class="row mt-20 medium-gutters">
         @foreach ($popular as $post)
         <div class="col-lg-6 single-popular-post">

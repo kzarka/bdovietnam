@@ -69,6 +69,10 @@ class Posts extends Model
         return $this->hasMany('App\Models\PostsCategories', 'post_id', 'id');
     }
 
+    public function news() {
+        return $this->hasOne('App\Models\PostsCategories', 'post_id', 'id')->where('category_id', 1);
+    }
+
     /**
      * Get first category
      */
@@ -108,14 +112,20 @@ class Posts extends Model
      * Get lastest posts
      */
     public static function getLastestPosts($limit = 5) {
-        return self::public()->exclude('content')->take($limit)->get();
+        $collection = self::public()->exclude('content')->get();
+        $collection = $collection->filter(function ($item, $key) {
+            if(!$item->news) return $item;
+        })->take($limit);
     }
 
     /**
      * Get lastest posts
      */
     public static function getPopularPosts($limit = 3) {
-        return self::public()->exclude('content')->take($limit)->orderBy('view_count')->get();
+        $collection = self::public()->exclude('content')->orderBy('view_count')->get();
+        $collection = $collection->filter(function ($item, $key) {
+            if(!$item->news) return $item;
+        })->take($limit);
     }
 
     public static function getPostsByCategory($id = '1', $limit = 3) {
@@ -142,7 +152,9 @@ class Posts extends Model
             }
             $posts = $result->where('public', self::PUBLIC_POST);
         }
-        return $posts->take($limit);
+        return $posts->filter(function ($item, $key) {
+            if(!$item->news) return $item;
+        })->take($limit);
     }
 
     public function getCreatedAtAttribute($value) {

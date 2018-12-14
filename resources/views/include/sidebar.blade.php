@@ -5,7 +5,7 @@
     <div class="single-sidebar-widget editors-pick-widget">
         <h6 class="title">{{ $is_post ? 'Cùng Chủ Đề' : 'Random' }}</h6>
         <div class="editors-pick-post">
-            @if ($top_sidebar_posts->count() > 0)
+            @if ($top_sidebar_posts && $top_sidebar_posts->count() > 0)
 
             @php $post_first = $top_sidebar_posts->shift(); @endphp
             <div class="feature-img-wrap relative">
@@ -36,7 +36,7 @@
             </div>
             @endif
 
-            @if ($top_sidebar_posts->count() > 0)
+            @if ($top_sidebar_posts && $top_sidebar_posts->count() > 0)
             @foreach ($top_sidebar_posts as $post)
             <div class="post-lists">
                 <div class="single-post d-flex flex-row">
@@ -80,6 +80,7 @@
     </div>
     <div class="single-sidebar-widget most-popular-widget">
         <h6 class="title">Most Popular</h6>
+        @if ($popular && $popular->count() > 0)
         @foreach ($popular as $post)
         <div class="single-list flex-row d-flex">
             <div class="thumb">
@@ -96,6 +97,8 @@
             </div>
         </div>
         @endforeach
+
+        @endif
     </div>
     <div class="single-sidebar-widget social-network-widget">
         <h6 class="title">Social Networks</h6>
