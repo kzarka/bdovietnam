@@ -22,7 +22,8 @@ class Posts extends Model
         'public',
         'content',
         'slug',
-        'excert'
+        'excert',
+        'thumbnail'
     ];
 
     protected $mainColumns = [
