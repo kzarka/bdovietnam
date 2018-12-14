@@ -133,7 +133,7 @@ class Posts extends Model
         if(!$category) return false;
         $posts = $category->posts;
         $posts = $posts->filter(function ($item, $key) {
-            if($item->public === 1) return $item;
+            if($item->post->public == 1) return $item;
         })->take($limit);
         return $posts;
     }
