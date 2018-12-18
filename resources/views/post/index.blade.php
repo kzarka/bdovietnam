@@ -10,7 +10,7 @@
             @if ($post->category)
             <li><a href="{{ route('category', $post->category->slug ?: $post->category->id) }}">{{ $post->category->name }}</a></li>
             @else
-            <li><a href="{{ route('category', $post->firstCategoryName()) }}">{{ $post->firstCategoryName() }}</a></li>
+            <li><a href="{{ route('category', $post->firstCategorySlug()) }}">{{ $post->firstCategoryName() }}</a></li>
             @endif
         </ul>
         <a href="">

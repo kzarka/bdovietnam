@@ -92,6 +92,12 @@ class Posts extends Model
         return Categories::DEFAULT_CATEGORY;
     }
 
+    public function firstCategorySlug () {
+        $category = $this->firstCategory();
+        if ($category) return ($category->slug ?: $category->id);
+        return Categories::DEFAULT_CATEGORY;
+    }
+
     /**
      * Build url
      */

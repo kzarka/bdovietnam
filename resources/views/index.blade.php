@@ -16,7 +16,7 @@
                 <img class="img-fluid" src="{{ $post->thumbnail }}" alt="">
             </div>
             <ul class="tags">
-                <li><a href="{{ route('category', $post->firstCategoryName()) }}">
+                <li><a href="{{ route('category', $post->firstCategorySlug()) }}">
                     {{ $post->firstCategoryName() }}
                     </a>
                 </li>
@@ -62,7 +62,7 @@
         <div class="details">
             <ul class="tags">
                 <li>
-                    <a href="{{ route('category', $popular_first->firstCategoryName()) }}">
+                    <a href="{{ route('category', $popular_first->firstCategorySlug()) }}">
                         {{ $popular_first->firstCategoryName() }}
                     </a>
                 </li>
@@ -90,7 +90,7 @@
                 </div>
                 <ul class="tags">
                     <li>
-                        <a href="{{ route('category', $post->firstCategoryName()) }}">
+                        <a href="{{ route('category', $post->firstCategorySlug()) }}">
                             {{ $post->firstCategoryName() }}
                         </a>
                     </li>
@@ -106,7 +106,7 @@
                     <li><a href="#"><span class="lnr lnr-bubble"></span>06 </a></li>
                 </ul>
                 <p class="excert">
-                    Lorem ipsum dolor sit amet, consecteturadip isicing elit, sed do eiusmod tempor incididunt ed do eius.
+                    {{ $post->excert }}
                 </p>
             </div>
         </div>

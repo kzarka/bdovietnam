@@ -16,7 +16,7 @@
                 <div class="top-post-details">
                     <ul class="tags">
                         <li>
-                            <a href="{{ route('category', $first_news->firstCategoryName()) }}">
+                            <a href="{{ route('category', $first_news->firstCategorySlug()) }}">
                                 {{ $first_news->firstCategoryName() }}
                             </a>
                         </li>
@@ -44,7 +44,7 @@
                     <div class="top-post-details">
                         <ul class="tags">
                             <li>
-                                <a href="{{ route('category', $post->post->firstCategoryName()) }}">
+                                <a href="{{ route('category', $post->post->firstCategorySlug()) }}">
                                     {{ $post->post->firstCategoryName() }}
                                 </a>
                             </li>
