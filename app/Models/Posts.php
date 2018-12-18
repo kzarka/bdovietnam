@@ -23,7 +23,6 @@ class Posts extends Model
         'content',
         'slug',
         'excert',
-        'thumbnail'
     ];
 
     protected $mainColumns = [
