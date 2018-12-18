@@ -27,7 +27,7 @@
                 <li><a href="#"><span class="lnr lnr-bubble"></span>06 Comments</a></li>
             </ul>
             <p class="excert">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
+                {{ $collection->post->excert }}
             </p>
         </div>
     </div>
