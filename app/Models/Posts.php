@@ -116,6 +116,8 @@ class Posts extends Model
         $collection = $collection->filter(function ($item, $key) {
             if(!$item->news) return $item;
         })->take($limit);
+
+        return $collection;
     }
 
     /**
@@ -126,6 +128,8 @@ class Posts extends Model
         $collection = $collection->filter(function ($item, $key) {
             if(!$item->news) return $item;
         })->take($limit);
+
+        return $collection;
     }
 
     public static function getPostsByCategory($id = '1', $limit = 3) {

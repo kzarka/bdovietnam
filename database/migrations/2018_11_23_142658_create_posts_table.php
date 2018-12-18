@@ -19,7 +19,7 @@ class CreatePostsTable extends Migration
             $table->string('slug', 100)->nullable();
             $table->text('content')->nullable();
             $table->text('excert')->nullable();
-            $table->string('thumbnail', 200)->default('/images/thumbnail.jpg');
+            $table->string('thumbnail', 200)->nullable()->default('/images/thumbnail.jpg');
             $table->tinyInteger('public')->default(0);
             $table->smallInteger('author_id')->nullable();
             $table->integer('view_count')->default(0);
