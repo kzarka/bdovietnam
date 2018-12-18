@@ -28,7 +28,7 @@
             <a class="prev" href="#"><span class="lnr lnr-arrow-left"></span>Prev Post</a>
             <a class="next" href="#">Next Post<span class="lnr lnr-arrow-right"></span></a>
         </div>
-        
+        <!-- Comments area -->
         <div class="comment-sec-area">
             <div class="container">
                 <div class="row flex-column">
@@ -37,7 +37,7 @@
                         <div class="single-comment justify-content-between d-flex">
                             <div class="user justify-content-between d-flex">
                                 <div class="thumb">
-                                    <img src="img/blog/c1.jpg" alt="">
+                                    <img src="/img/blog/c1.jpg" alt="">
                                 </div>
                                 <div class="desc">
                                     <h5><a href="#">Emilly Blunt</a></h5>
@@ -56,7 +56,7 @@
                         <div class="single-comment justify-content-between d-flex">
                             <div class="user justify-content-between d-flex">
                                 <div class="thumb">
-                                    <img src="img/blog/c2.jpg" alt="">
+                                    <img src="/img/blog/c2.jpg" alt="">
                                 </div>
                                 <div class="desc">
                                     <h5><a href="#">Emilly Blunt</a></h5>
@@ -75,7 +75,7 @@
                         <div class="single-comment justify-content-between d-flex">
                             <div class="user justify-content-between d-flex">
                                 <div class="thumb">
-                                    <img src="img/blog/c3.jpg" alt="">
+                                    <img src="/img/blog/c3.jpg" alt="">
                                 </div>
                                 <div class="desc">
                                     <h5><a href="#">Emilly Blunt</a></h5>

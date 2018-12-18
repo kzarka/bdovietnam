@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Marcellus');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 .timer-top {
     text-align: center;
     background: #f6214b;
@@ -11,11 +13,18 @@
 }
 
 .post-content {
+    color: rgba(0,0,0,0.87);
     font-size: 17px;
-    font-family: "Times New Roman", Times, serif;
+    font-family: 'Roboto', sans-serif;
+    /*font-family: "Times New Roman", Times, serif;*/
 }
 
 .thumb img {
     width: 100px;
     height: 80px;
+}
+
+.comment-list .thumb img {
+    width: 60px;
+    height: 60px;
 }
