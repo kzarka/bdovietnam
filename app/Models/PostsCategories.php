@@ -31,7 +31,7 @@ class PostsCategories extends Model
         return $this->hasOne('App\Models\Categories', 'id', 'category_id');
     }
 
-    public static function updateItems($id, $categories) {
+    public static function updateItems($id, $categories = null) {
         if (!$categories) {
             self::where('post_id', $id)->delete();
             return true;

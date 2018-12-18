@@ -26,6 +26,7 @@ class PostsController extends Controller
         if(!$post) {
             return 'false';
         }
+        PostsCategories::updateItems($post->id);
         $post->delete();
         return 'true';
     }
