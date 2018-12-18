@@ -22,6 +22,19 @@
 .post-content h1, h2, h3, h4, h5, h6 {
     font-family: 'Roboto', sans-serif;
 }
+
+.post-content td, th {
+    padding: .75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+
+.post-content table {
+    width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
+}
+
 .thumb img {
     width: 100px;
     height: 80px;
