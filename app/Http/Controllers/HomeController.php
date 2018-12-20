@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Cartalyst\Sentinel\Native\Facades\Sentinel;
 
 use Illuminate\Http\Request;
 use App\Models\Categories;

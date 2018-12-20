@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\User;
+use Cartalyst\Sentinel\Native\Facades\Sentinel;
 
 class UserTableSeeder extends Seeder
 {
@@ -13,6 +13,14 @@ class UserTableSeeder extends Seeder
     public function run()
     {
         DB::table('users')->delete();
-        User::create(['name' => 'Admin', 'email' => 'admin@gmail.com', 'password' => Hash::make('anh123')]);
+        $credentials = [
+            'first_name' => 'Admin', 
+            'email' => 'admin@gmail.com', 
+            'password' => 'anh123'
+        ];
+        
+        $user = Sentinel::registerAndActivate($credentials);
+        $role = Sentinel::findRoleBySlug('admin');
+        $user->roles()->attach($role);
     }
 }

@@ -27,11 +27,11 @@ Route::get('/blog/{categoryIdentity}.html', 'CategoriesController@index')->name(
 Route::get('/blog/{categoryIdentity}/{postIdentity}.html', 'PostsController@index')->name('post')
 	->middleware('postcountfilter');
 
-Auth::routes();
+Route::match(['get', 'post'], '/login', 'Auth\LoginController@login')->name('login');
 
-Route::get('/home', 'HomeController@index');
+Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 
-Route::namespace('Admin')->prefix('admin')->middleware('auth')->group(function () {
+Route::namespace('Admin')->prefix('admin')->middleware('auth', 'check.admin')->group(function () {
 
 	Route::get('/dashboard', 'MainController@index')->name('admin_dashboard');
 
