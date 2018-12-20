@@ -29,8 +29,9 @@ class User extends Authenticatable
     ];
 
     public static function getName($id) {
-        return self::select('name')
+        $user = self::select('first_name', 'last_name')
             ->where('id', $id)
-            ->first()['name'] ?: '';
+            ->first();
+        return $user['first_name'] . ' ' . $user['last_name'];
     }
 }
