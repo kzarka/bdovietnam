@@ -25,7 +25,7 @@
                         <h3>{{ $first_news->title }}</h3>
                     </a>
                     <ul class="meta">
-                        <li><a href="#"><span class="lnr lnr-user"></span>{{ $first_news->user->name }}</a></li>
+                        <li><a href="#"><span class="lnr lnr-user"></span>{{ $first_news->getAuthorName() }}</a></li>
                         <li><a href="#"><span class="lnr lnr-calendar-full"></span>{{ $first_news->created_at }}</a></li>
                         <li><a href="#"><span class="lnr lnr-bubble"></span>06 Comments</a></li>
                     </ul>
@@ -53,7 +53,7 @@
                             <h4>{{ $post->post->title }}</h4>
                         </a>
                         <ul class="meta">
-                            <li><a href="#"><span class="lnr lnr-user"></span>{{ $post->post->user->name }}</a></li>
+                            <li><a href="#"><span class="lnr lnr-user"></span>{{ $post->post->getAuthorName() }}</a></li>
                             <li><a href="#"><span class="lnr lnr-calendar-full"></span>{{ $post->created_at }}</a></li>
                             <li><a href="#"><span class="lnr lnr-bubble"></span>06 Comments</a></li>
                         </ul>

@@ -22,7 +22,7 @@
                 <h4>{{ $collection->post->title }}</h4>
             </a>
             <ul class="meta">
-                <li><a href="#"><span class="lnr lnr-user"></span>{{ $collection->post->user->name }}</a></li>
+                <li><a href="#"><span class="lnr lnr-user"></span>{{ $collection->post->getAuthorName() }}</a></li>
                 <li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
                 <li><a href="#"><span class="lnr lnr-bubble"></span>06 Comments</a></li>
             </ul>

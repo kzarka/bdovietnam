@@ -3,6 +3,7 @@
 namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
+use App\User;
 
 class Posts extends Model
 {
@@ -184,5 +185,9 @@ class Posts extends Model
         $dateString = str_replace("Nov", "Tháng 11", $dateString);
         $dateString = str_replace("Dec", "Tháng 12", $dateString);
         return $dateString;
+    }
+
+    public function getAuthorName() {
+        return User::getName($this->author_id);
     }
 }

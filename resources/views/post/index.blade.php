@@ -17,7 +17,7 @@
             <h3>{{ $post->title }}</h3>
         </a>
         <ul class="meta pb-20">
-            <li><a href="#"><span class="lnr lnr-user"></span>{{ $post->user->name }}</a></li>
+            <li><a href="#"><span class="lnr lnr-user"></span>{{ $post->getAuthorName() }}</a></li>
             <li><a href="#"><span class="lnr lnr-calendar-full"></span>{{ $post->created_at }}</a></li>
             <li><a href="#"><span class="lnr lnr-bubble"></span>06 </a></li>
         </ul>

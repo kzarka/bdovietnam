@@ -28,7 +28,7 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public static function getName($id) {
+    public static function getName($id = null) {
         $user = self::select('first_name', 'last_name')
             ->where('id', $id)
             ->first();

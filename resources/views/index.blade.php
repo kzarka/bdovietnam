@@ -27,7 +27,7 @@
                 <h4>{{ $post->title }}</h4>
             </a>
             <ul class="meta">
-                <li><a href="#"><span class="lnr lnr-user"></span>{{ $post->user->name }}</a></li>
+                <li><a href="#"><span class="lnr lnr-user"></span>{{ $post->getAuthorName() }}</a></li>
                 <li><a href="#"><span class="lnr lnr-calendar-full"></span>{{ $post->created_at }}</a></li>
                 <li><a href="#"><span class="lnr lnr-bubble"></span>06 Comments</a></li>
             </ul>
@@ -71,7 +71,7 @@
                 <h3>{{ $popular_first->title }}</h3>
             </a>
             <ul class="meta">
-                <li><a href="#"><span class="lnr lnr-user"></span>{{ $popular_first->user->name }}</a></li>
+                <li><a href="#"><span class="lnr lnr-user"></span>{{ $popular_first->getAuthorName() }}</a></li>
                 <li><a href="#"><span class="lnr lnr-calendar-full"></span>{{ $post->created_at }}</a></li>
                 <li><a href="#"><span class="lnr lnr-bubble"></span>06 Comments</a></li>
             </ul>
@@ -101,7 +101,7 @@
                     <h4>{{ $post->title }}</h4>
                 </a>
                 <ul class="meta">
-                    <li><a href="#"><span class="lnr lnr-user"></span>{{ $post->user->name }}</a></li>
+                    <li><a href="#"><span class="lnr lnr-user"></span>{{ $post->getAuthorName() }}</a></li>
                     <li><a href="#"><span class="lnr lnr-calendar-full"></span>{{ $post->created_at }}</a></li>
                     <li><a href="#"><span class="lnr lnr-bubble"></span>06 </a></li>
                 </ul>
