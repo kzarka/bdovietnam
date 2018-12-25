@@ -1,8 +1,11 @@
 <div class="sidebars-area">
     <div class="box">
         <div class="content">
+            <span class="text" id="boss_name"></span>
             <div class="center">
-                <span class="text" id="boss_name"></span>
+
+                <span class="timer" id="boss_timers">6h59p</span>
+                
             </div>
         </div>
     </div>
