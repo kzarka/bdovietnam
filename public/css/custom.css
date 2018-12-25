@@ -45,20 +45,41 @@
     height: 60px;
 }
 
-.boss_timer {
-    text-align: center;
-    font-size: 18px;
+.box {
+    width: 100%;
+    padding-top: 100%; /* 1:1 Aspect Ratio */
+    position: relative; /* If you want text inside of it */
 }
 
-.sidebars-area .kutum {
-    max-width: 100%;
-    margin-top: 10px;
+.box .content {
+    background-image: url("/images/bosses/kzarka.png");
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container */
-    background-image: url("/images/bosses/kutum.png");
+    position:  absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    font-size: 20px;
+    text-align: center;
+    vertical-align: center;
 }
 
-.sidebars-area .kzarka {
-    background-image: url("/images/bosses/kzarka.png");
+.box .content .center {
+    position: absolute;
+    top: 50%; 
+    height: 50%; 
+    width: 100%;
+}
+
+.box .content .center .text {
+    padding-left: 5px;
+    padding-right: 5px;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: #222;
+    background-color: #fff;
 }

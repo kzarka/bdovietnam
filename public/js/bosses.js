@@ -2,6 +2,7 @@ $(document).ready(function() {
     "use strict";
 
     var next_boss = getNextBoss();
+    var bossIndex = 1;
     init();
 
     function init() {
@@ -11,11 +12,33 @@ $(document).ready(function() {
 
     function printBossName () {
         $('#boss_name').html(next_boss[0] + ': ' +next_boss[1]);
+        let bossList = next_boss[0].split('|');
+        if(bossList.length == 1) {
+            let name = bossList[0].toLowerCase();
+            $('.box .content').css('background-image', 'url(/images/bosses/'+ name + '.png)');
+            return;
+        }
+        let name = bossList[0].toLowerCase();
+        $('.box .content').css('background-image', 'url(/images/bosses/'+ name + '.png)');
+        loopBossImages();
+    }
+
+    function loopBossImages(){
+        let bossList = next_boss[0].split('|');
+        if(bossIndex > 1) bossIndex = 0;
+        let name = bossList[bossIndex].toLowerCase();
+        $('.box .content').css('background-image', 'url(/images/bosses/'+ name + '.png)');
+        bossIndex++;
+        if (bossList.length > 1) {
+            setTimeout(loopBossImages, 2000);
+        } 
     }
 
     function countDown () {
         $('#boss_timer').html(next_boss[1]);
     }
+
+
 
     /* Get next boss 
      * @return {array}

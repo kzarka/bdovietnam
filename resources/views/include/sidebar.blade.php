@@ -1,7 +1,10 @@
 <div class="sidebars-area">
-    <div class="boss_timer kutum">
-        <img class="img-fluid" src="/images/bosses/kzarka.png" style="visibility: hidden;" />
-        <h6 id="boss_name">aaaa</h6><br>
+    <div class="box">
+        <div class="content">
+            <div class="center">
+                <span class="text" id="boss_name"></span>
+            </div>
+        </div>
     </div>
     <div class="single-sidebar-widget editors-pick-widget">
         <h6 class="title">{{ $is_post ? 'Cùng Chủ Đề' : 'Random' }}</h6>
