@@ -67,4 +67,8 @@ Route::namespace('Admin')->prefix('admin')->middleware('auth', 'check.admin')->g
 
 	Route::delete('posts/delete/{id}', 'PostsController@delete')->name('admin_post_delete');
 
+	// boss
+
+	Route::match(['get', 'post'], '/bosses', 'BossController@index')->name('admin_bosses');
+
 });

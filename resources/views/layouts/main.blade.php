@@ -1,6 +1,7 @@
 <?php
 	use App\Models\ImagesSetting;
 	use App\Models\Posts;
+	use App\Models\BossData;
 	/* Specific page contain sidebar or not */ 
 	$sidebar = (bool)(isset($sidebar) ? $sidebar : true);
 	/* Specific page breadcrumb */ 
@@ -103,6 +104,10 @@
 		<script src="{{ asset('js/mail-script.js') }}"></script>
 		<script src="{{ asset('js/main.js') }}"></script>
 		<script src="{{ asset('js/timer.js') }}"></script>
+		<script type="text/javascript">
+			var bosses_table = {!! BossData::find(1)->data !!};
+		</script>
+		<script src="{{ asset('js/bosses.js') }}"></script>
 		@yield('js')
 	</body>
 </html>

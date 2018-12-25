@@ -132,7 +132,7 @@
 @section('js')
 <script type="text/javascript">
     var parent = {!! json_encode($parent) !!};
-w</script>
+</script>
 <script src="{{ asset('admin/js/categories.js') }}"></script>
 
 @endsection

@@ -74,6 +74,13 @@
                     </li>
                 </ul>
             </li>
+            @if (strstr($currentUrl, 'bosses') === false)
+            <li>
+            @else
+            <li class="active">
+            @endif
+                <a href="{{ route('admin_bosses') }}"><i class="fa fa-dashboard"></i> <span> Bosses</span></a>
+            </li>
             <li class="treeview">
                 <a href="#">
                     <i class="fa fa-files-o"></i>

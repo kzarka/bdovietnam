@@ -1,5 +1,8 @@
 <div class="sidebars-area">
-    <img class="img-fluid" src="https://bdocodex.com/items/ui_artwork/ic_04920.png">
+    <div class="boss_timer kutum">
+        <img class="img-fluid" src="/images/bosses/kzarka.png" style="visibility: hidden;" />
+        <h6 id="boss_name">aaaa</h6><br>
+    </div>
     <div class="single-sidebar-widget editors-pick-widget">
         <h6 class="title">{{ $is_post ? 'Cùng Chủ Đề' : 'Random' }}</h6>
         <div class="editors-pick-post">

@@ -44,3 +44,21 @@
     width: 60px;
     height: 60px;
 }
+
+.boss_timer {
+    text-align: center;
+    font-size: 18px;
+}
+
+.sidebars-area .kutum {
+    max-width: 100%;
+    margin-top: 10px;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    background-image: url("/images/bosses/kutum.png");
+}
+
+.sidebars-area .kzarka {
+    background-image: url("/images/bosses/kzarka.png");
+}
