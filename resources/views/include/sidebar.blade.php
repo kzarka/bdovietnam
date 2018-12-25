@@ -1,12 +1,13 @@
 <div class="sidebars-area">
     <div class="box">
         <div class="content">
-            <span class="text" id="boss_name"></span>
+            <span class="text" id="boss_timers">6h59p</span>
             <div class="center">
 
-                <span class="timer" id="boss_timers">6h59p</span>
+                <span class="timer" id="boss_name"></span>
                 
             </div>
+
         </div>
     </div>
     <div class="single-sidebar-widget editors-pick-widget">
