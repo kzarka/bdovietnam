@@ -52,7 +52,6 @@ $(document).ready(function() {
     function countDown () {
         let displayTimer = '';
         let secondToBoss = Math.ceil((timestampNextBoss - Date.now())/1000);
-        console.log(secondToBoss);
         let minToBoss = Math.ceil(secondToBoss/60);
         let hourToBoss = Math.floor(minToBoss/60);
         let remainMinutes = minToBoss%60;
@@ -105,7 +104,6 @@ $(document).ready(function() {
         while(!(bosses_table[n][hour])) {
             loop_count++;
             if(loop_count > 42) return null;
-            console.log(n + ' ' + hour);
             if(current>time.length-1) {
                 current = 0;
                 if(n == 6) {
