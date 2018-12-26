@@ -3,11 +3,26 @@ $(document).ready(function() {
 
     var next_boss = getNextBoss();
     var bossIndex = 1;
+    var timestampNextBoss = 0;
     init();
 
     function init() {
+        nextBossTimeStamp();
         printBossName();
         countDown();
+    }
+
+    function nextBossTimeStamp() {
+        let timeNow = next_boss[1].split(':');
+        var d = new Date();
+        let currentDay = next_boss[2];
+        if(d.getDay() < currentDay) {
+            d.setDate(d.getDate() +1);
+        }
+        d.setHours(timeNow[0]);
+        d.setMinutes(timeNow[1]);
+        d.setSeconds(0);
+        timestampNextBoss = d.getTime();
     }
 
     function printBossName () {
@@ -35,7 +50,23 @@ $(document).ready(function() {
     }
 
     function countDown () {
-        $('#boss_timer').html(next_boss[1]);
+        let displayTimer = '';
+        let secondToBoss = Math.ceil((timestampNextBoss - Date.now())/1000);
+        console.log(secondToBoss);
+        let minToBoss = Math.ceil(secondToBoss/60);
+        let hourToBoss = Math.floor(minToBoss/60);
+        let remainMinutes = minToBoss%60;
+        let remainSeconds = secondToBoss%60;
+        if (remainMinutes < 10) {
+            remainMinutes = '0' + remainMinutes;
+        }
+        if (remainSeconds < 10) {
+            remainSeconds = '0' + remainSeconds;
+        }
+
+        displayTimer = hourToBoss + ':' + remainMinutes + ':' + remainSeconds;
+        $('#boss_timer').html(displayTimer);
+        setTimeout(countDown, 1000);
     }
 
 

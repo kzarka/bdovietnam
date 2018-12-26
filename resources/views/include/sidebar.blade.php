@@ -1,7 +1,7 @@
 <div class="sidebars-area">
     <div class="box">
         <div class="content">
-            <span class="text" id="boss_timers">6h59p</span>
+            <span class="text" id="boss_timer"></span>
             <div class="center">
 
                 <span class="timer" id="boss_name"></span>
