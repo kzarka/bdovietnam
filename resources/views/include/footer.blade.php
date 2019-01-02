@@ -1,6 +1,6 @@
 <!-- start footer Area -->
-<footer class="footer-area section-gap">
-	<div class="container">
+<footer class="footer-area ">
+	<div class="container section-gap">
 		<div class="row">
 			<div class="col-lg-3 col-md-6 single-footer-widget">
 				<h4>Top Products</h4>
@@ -62,6 +62,10 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> BDOVi
 				<a href="#"><i class="fa fa-behance"></i></a>
 			</div>
 		</div>
+	</div>
+	<!-- Select theme section -->
+	<div class="theme-footer">
+		<a href="">Default</a> | <a href="">Calpheon</a> | <a href="">Valencia</a>
 	</div>
 </footer>
 <!-- End footer Area -->

@@ -8,7 +8,7 @@
 }
 
 .post-content img {
-    padding: 10px 0 10px 0;
+    padding: 10px 0;
     max-width: 100%;
     height: auto !important;
 }
@@ -95,4 +95,15 @@
     font-weight: 600;
     color: #222;
     background-color: #fff;
+}
+
+.section-gap {
+    padding: 120px 0 90px 0;
+}
+
+.theme-footer {
+    text-align: right;
+    font-size: 10px;
+    right: 10px;
+    padding: 0 30px 20px 0;
 }

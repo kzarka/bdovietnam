@@ -27,6 +27,8 @@ Route::get('/blog/{categoryIdentity}.html', 'CategoriesController@index')->name(
 Route::get('/blog/{categoryIdentity}/{postIdentity}.html', 'PostsController@index')->name('post')
 	->middleware('postcountfilter');
 
+Route::get('theme/set', 'MainController@setTheme')->name('set_theme_api');
+
 Route::match(['get', 'post'], '/login', 'Auth\LoginController@login')->name('login');
 
 Route::get('/logout', 'Auth\LoginController@logout')->name('logout');

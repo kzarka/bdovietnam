@@ -23,6 +23,8 @@
 	    $is_post = true;
 	    $top_sidebar_posts = Posts::getRandomPosts($category->id, $post->id);
 	}
+	/* Detect theme */
+	$theme = session('theme', '');
 ?>
 
 <!DOCTYPE html>
@@ -38,6 +40,8 @@
 		<meta name="description" content="">
 		<!-- Meta Keyword -->
 		<meta name="keywords" content="">
+		<!-- CSRF -->
+		<meta name="csrf-token" content="{{ csrf_token() }}">
 		<!-- meta character set -->
 		<meta charset="UTF-8">
 		<!-- Site Title -->
@@ -58,9 +62,23 @@
 		<link rel="stylesheet" href="{{ asset('css/classes.css') }}">
 		<link rel="stylesheet" href="{{ asset('css/custom.css') }}">
 		<link rel="stylesheet" href="{{ asset('css/breadcrumb.css') }}">
+		@if ($theme)
+		<link rel="stylesheet" href="{{ asset('css/custom-background.css') }}">
+		<style type="text/css">
+			body {
+			    background-image:    url('/images/background/{{ $theme }}.jpg');
+			    background-size:     cover;
+			    background-repeat:   no-repeat;
+			    background-attachment: fixed;
+			    background-position: center center;
+			}
+		</style>
+		@endif
+
 		@yield('css')
 	</head>
 	<body>
+		<input type="hidden" value="{{ route('set_theme_api') }}" id="set_theme_api" />
 		<header>
 			@include('include.header')
 		</header>
@@ -104,6 +122,7 @@
 		<script src="{{ asset('js/mail-script.js') }}"></script>
 		<script src="{{ asset('js/main.js') }}"></script>
 		<script src="{{ asset('js/timer.js') }}"></script>
+		<script src="{{ asset('js/custom.js') }}"></script>
 		<script type="text/javascript">
 			var bosses_table = {!! BossData::find(1)->data !!};
 		</script>
