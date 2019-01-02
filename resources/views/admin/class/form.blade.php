@@ -27,9 +27,9 @@
             	<div class="form-group">
             		<label class="col-sm-2 control-label">Enable</label>
             		<div class="col-sm-4">
-            			<select name="enable" class="form-control">
-            				<option value="1"{{ ($class->enable === 1) ? ' selected' : '' }}>Enable</option>
-            				<option value="0"{{ ($class->enable === 0) ? ' selected' : '' }}>Disable</option>
+            			<select name="active" class="form-control">
+            				<option value="1"{{ ($class->active === 1) ? ' selected' : '' }}>Enable</option>
+            				<option value="0"{{ ($class->active === 0) ? ' selected' : '' }}>Disable</option>
             			</select>
             		</div>
 

@@ -22,7 +22,7 @@
                     @foreach ($classes as $class)
                     <tr>
                         <td>{{ $class->name }}</td>
-                        <td>{{ $class->enable ? 'Yes' : 'No' }}</td>
+                        <td>{{ $class->active ? 'Yes' : 'No' }}</td>
                         <td>{{ $class->has_awk ? 'Yes' : 'Not Yet' }}</td>
                         <td>{{ $class->created_at }}</td>
                         <td>

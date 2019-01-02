@@ -1,5 +1,7 @@
-<?php
+<?php 
+    use Cartalyst\Sentinel\Native\Facades\Sentinel;
     use Illuminate\Support\Facades\Route;
+    $user = Sentinel::getUser() ?: null;
     $currentUrl = Route::getFacadeRoot()->current()->uri();
     $header = 'Dashboard';
     if (strstr($currentUrl, 'posts') == true) {

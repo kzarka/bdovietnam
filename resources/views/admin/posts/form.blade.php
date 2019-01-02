@@ -1,7 +1,8 @@
 <?php
-	$route = 'admin_create_post';
-	$isNew = !($post->id);
-	if(!$isNew) $route = 'admin_edit_post';
+use Cartalyst\Sentinel\Native\Facades\Sentinel;
+$route = 'admin_create_post';
+$isNew = !($post->id);
+if(!$isNew) $route = 'admin_edit_post';
 ?>
 @extends('admin.layouts.main')
 
@@ -17,7 +18,7 @@
     	<form action="{{ route($route, $post->id) }}" method='POST' class="" id="post_form">
     		{{ csrf_field() }}
     		<input type="hidden" name="id" value="{{ $post->id }}">
-            <input type="hidden" name="author_id" value="{{ $post->author_id ?: Auth::id() }}">
+            <input type="hidden" name="author_id" value="{{ $post->author_id ?: Sentinel::getUser()->id }}">
         	<div class="box-body">
             	<div class="form-group">
             		<label>Title</label>
