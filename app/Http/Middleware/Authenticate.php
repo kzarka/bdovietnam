@@ -15,10 +15,9 @@ class Authenticate
      */
     public function handle($request, Closure $next)
     {
-        if (Sentinel::check()) {
-            return $next($request);
+        if (!Sentinel::check()) {
+           return redirect()->route('login')->withErrors('Bạn phải đăng nhập');
         }
-
-        return redirect()->route('login')->withErrors('Bạn phải đăng nhập');
+        return $next($request);
     }
 }

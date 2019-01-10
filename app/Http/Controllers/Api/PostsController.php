@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Api;
-
+use Cartalyst\Sentinel\Native\Facades\Sentinel;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Posts;
@@ -12,7 +12,11 @@ class PostsController extends Controller
 
     public function load(Request $request)
     {
-        $posts = Posts::select('*')->get();
+        if(Sentinel::getUser()->inRole('admin')) {
+            $posts = Posts::select('*')->get();
+        } else {
+            $posts = Posts::where('author_id', Sentinel::getUser()->id)->get();
+        }
         foreach ($posts as $post) {
             $post->author_name = User::getName($post->author_id);
         }

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
+use Cartalyst\Sentinel\Native\Facades\Sentinel;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Posts;
@@ -17,8 +17,7 @@ class PostsController extends Controller
      */
     public function index()
     {
-        $posts = Posts::all();
-        return view('admin.posts.index', ['posts' => $posts]);
+        return view('admin.posts.index');
     }
 
     public function create(Request $request)
@@ -65,6 +64,10 @@ class PostsController extends Controller
             return redirect()->route('admin_posts');
         }
 
+        if(!Sentinel::getUser()->inRole('admin') && $post->author_id != Sentinel::getUser()->id) {
+            return redirect()->route('admin_posts');
+        }
+
         if($method == 'GET') {
             return view('admin.posts.form', ['post' => $post, 'categories' => $categories, 'selectedArray' => $selectedArray]);
         }
@@ -88,6 +91,9 @@ class PostsController extends Controller
     {
         $post = Posts::find($id);
         if(!$post) {
+            return 'false';
+        }
+        if(!Sentinel::getUser()->inRole('admin') && $post->author_id != Sentinel::getUser()->id) {
             return 'false';
         }
         $post->delete();

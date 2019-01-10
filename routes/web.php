@@ -29,9 +29,11 @@ Route::get('/blog/{categoryIdentity}/{postIdentity}.html', 'PostsController@inde
 
 Route::get('theme/set', 'MainController@setTheme')->name('set_theme_api');
 
-Route::match(['get', 'post'], '/login', 'Auth\LoginController@login')->name('login');
+Route::match(['get', 'post'], '/login', 'Auth\LoginController@login')->name('login')->middleware('guest');
 
 Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
+
+Route::match(['get', 'post'], '/register', 'Auth\RegisterController@register')->name('register');
 
 Route::namespace('Admin')->prefix('admin')->middleware('auth', 'check.admin')->group(function () {
 

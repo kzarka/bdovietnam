@@ -49,10 +49,10 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>
-                <h4 class="modal-title">Delete Category</h4>
+                <h4 class="modal-title">Delete Post</h4>
             </div>
             <div class="modal-body">
-                <p>Do you want to delete this class?</p>
+                <p>Do you want to delete this post?</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>

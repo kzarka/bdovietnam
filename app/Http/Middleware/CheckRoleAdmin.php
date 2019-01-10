@@ -17,7 +17,7 @@ class CheckRoleAdmin
      */
     public function handle($request, Closure $next)
     {
-        if (Sentinel::getUser()->inRole('admin')) {
+        if (Sentinel::getUser()->inRole('admin') || Sentinel::getUser()->inRole('mod')) {
             return $next($request);
         }
         return redirect()->route('home')->with('err', 'Bạn không có quyền truy cập');

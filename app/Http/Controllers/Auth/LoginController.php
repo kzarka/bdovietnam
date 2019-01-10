@@ -45,6 +45,7 @@ class LoginController extends Controller
     public function logout()
     {
         $user = Sentinel::getUser();
+        \Log::info($user);
         Sentinel::logout($user, true);
         return redirect()->route('home');
     }
