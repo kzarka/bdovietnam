@@ -118,7 +118,9 @@ class Posts extends Model
      * Get lastest posts
      */
     public static function getLastestPosts($limit = 5) {
-        $collection = self::public()->exclude('content')->get();
+        $collection = self::public()->exclude('content')
+        ->orderBy('created_at', 'DESC')
+        ->get();
         $collection = $collection->filter(function ($item, $key) {
             if(!$item->news) return $item;
         })->take($limit);
