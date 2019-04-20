@@ -5,7 +5,22 @@
 @section('content')
 <div class="single-post-wrap">
     @if (isset($post->id))
+    @if ($post->thumbnail)
+    <div class="feature-img-thumb relative">
+        <div class="overlay overlay-bg post-banner">
+            <ul class="tags">
+                @if ($post->category)
+                <li><a href="{{ route('category', $post->category->slug ?: $post->category->id) }}">{{ $post->category->name }}</a></li>
+                @else
+                <li><a href="{{ route('category', $post->firstCategorySlug()) }}">{{ $post->firstCategoryName() }}</a></li>
+                @endif
+            </ul>
+        </div>
+        <img class="img-fluid" src="{{ $post->thumbnail }}" alt="">
+    </div>
+    @endif
     <div class="content-wrap">
+        @if (!$post->thumbnail)
         <ul class="tags">
             @if ($post->category)
             <li><a href="{{ route('category', $post->category->slug ?: $post->category->id) }}">{{ $post->category->name }}</a></li>
@@ -13,12 +28,14 @@
             <li><a href="{{ route('category', $post->firstCategorySlug()) }}">{{ $post->firstCategoryName() }}</a></li>
             @endif
         </ul>
+        @endif
         <a href="">
-            <h3>{{ $post->title }}</h3>
+            <h3>{{ strtoupper($post->title) }}</h3>
         </a>
-        <ul class="meta pb-20">
-            <li><a href="#"><span class="lnr lnr-user"></span>{{ $post->getAuthorName() }}</a></li>
+        <ul class="meta post-meta">
             <li><a href="#"><span class="lnr lnr-calendar-full"></span>{{ $post->created_at }}</a></li>
+            <li><a href="#"><span class="lnr lnr-user"></span>{{ $post->getAuthorName() }}</a></li>
+            <li><a href="#"><span class="lnr lnr-eye"></span>{{ $post->getAuthorName() }}</a></li>
             <li><a href="#"><span class="lnr lnr-bubble"></span>06 </a></li>
         </ul>
         <div class="post-content">
