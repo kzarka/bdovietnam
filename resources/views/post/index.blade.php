@@ -35,7 +35,7 @@
         <ul class="meta post-meta">
             <li><a href="#"><span class="lnr lnr-calendar-full"></span>{{ $post->created_at }}</a></li>
             <li><a href="#"><span class="lnr lnr-user"></span>{{ $post->getAuthorName() }}</a></li>
-            <li><a href="#"><span class="lnr lnr-eye"></span>{{ $post->getAuthorName() }}</a></li>
+            <li><a href="#"><span class="lnr lnr-eye"></span>{{ $post->view_count }}</a></li>
             <li><a href="#"><span class="lnr lnr-bubble"></span>06 </a></li>
         </ul>
         <div class="post-content">
