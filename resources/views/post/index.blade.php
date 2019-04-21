@@ -29,13 +29,13 @@
             @endif
         </ul>
         @endif
-        <a href="">
+        <a href="" class="post-title">
             <h3>{{ strtoupper($post->title) }}</h3>
         </a>
         <ul class="meta post-meta">
             <li><a href="#"><span class="lnr lnr-calendar-full"></span>{{ $post->created_at }}</a></li>
             <li><a href="#"><span class="lnr lnr-user"></span>{{ $post->getAuthorName() }}</a></li>
-            <li><a href="#"><span class="lnr lnr-eye"></span>{{ $post->view_count }}</a></li>
+            <li><a href="#"><span class="lnr lnr-eye"></span>{{ $post->view_count }} lượt xem</a></li>
             <li><a href="#"><span class="lnr lnr-bubble"></span>06 </a></li>
         </ul>
         <div class="post-content">
@@ -46,6 +46,7 @@
             <a class="next" href="#">Next Post<span class="lnr lnr-arrow-right"></span></a>
         </div>
         <!-- Comments area -->
+        <!-- 
         <div class="comment-sec-area">
             <div class="container">
                 <div class="row flex-column">
@@ -109,7 +110,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
     <div class="comment-form">
         <h4>Post Comment</h4>
