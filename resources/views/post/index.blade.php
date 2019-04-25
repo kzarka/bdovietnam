@@ -1,5 +1,7 @@
 @extends('layouts.main')
 
+@section('thumbnail', isset($post->thumbnail) ? $post->thumbnail : '/images/thumbnail.jpg')
+
 @section('title', isset($post->id) ? $post->title : 'Post not found' )
 
 @section('content')

@@ -44,6 +44,8 @@
 		<meta name="csrf-token" content="{{ csrf_token() }}">
 		<!-- meta character set -->
 		<meta charset="UTF-8">
+		<!-- meta image -->
+		<meta property="og:image" content="@yield('thumbnail', '/images/thumbnail.jpg')">
 		<!-- Site Title -->
 		<title>@yield('title') - BDO Việt Nam</title>
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
