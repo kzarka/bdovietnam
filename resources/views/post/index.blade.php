@@ -5,7 +5,7 @@
 @section('content')
 <div class="single-post-wrap">
     @if (isset($post->id))
-    @if ($post->thumbnail)
+    @if ($post->top_image)
     <div class="feature-img-thumb relative">
         <div class="overlay overlay-bg post-banner">
             <ul class="tags">
@@ -16,11 +16,11 @@
                 @endif
             </ul>
         </div>
-        <img class="img-fluid" src="{{ $post->thumbnail }}" alt="">
+        <img class="img-fluid" src="{{ $post->top_image }}" alt="">
     </div>
     @endif
     <div class="content-wrap">
-        @if (!$post->thumbnail)
+        @if (!$post->top_image)
         <ul class="tags">
             @if ($post->category)
             <li><a href="{{ route('category', $post->category->slug ?: $post->category->id) }}">{{ $post->category->name }}</a></li>
@@ -30,7 +30,7 @@
         </ul>
         @endif
         <a href="" class="post-title">
-            <h3>{{ strtoupper($post->title) }}</h3>
+            <h3>{{ $post->title }}</h3>
         </a>
         <ul class="meta post-meta">
             <li><a href="#"><span class="lnr lnr-calendar-full"></span>{{ $post->created_at }}</a></li>

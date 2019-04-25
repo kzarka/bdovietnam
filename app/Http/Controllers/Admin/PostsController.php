@@ -39,6 +39,9 @@ class PostsController extends Controller
         if ($data['thumbnail']) {
             $post->thumbnail = $data['thumbnail'];
         }
+        if ($data['top_image']) {
+            $post->top_image = $data['top_image'];
+        }
         $post->save();
         $data['category'] = (isset($data['category'])) ? $data['category'] : null;
         PostsCategories::updateItems($post->id, $data['category']);
@@ -80,11 +83,14 @@ class PostsController extends Controller
         if ($data['thumbnail']) {
             $post->thumbnail = $data['thumbnail'];
         }
+        if ($data['top_image']) {
+            $post->top_image = $data['top_image'];
+        }
         $post->fill($data);
         $post->save();
         $data['category'] = (isset($data['category'])) ? $data['category'] : null;
         PostsCategories::updateItems($post->id, $data['category']);
-        return redirect()->route('admin_posts');
+        return redirect()->route('admin_edit_post', $id);
     }
 
     public function delete($id)

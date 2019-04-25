@@ -37,7 +37,8 @@ class Posts extends Model
         'created_at',
         'updated_at',
         'excert',
-        'thumbnail'
+        'thumbnail',
+        'top_image'
     ];
     const PUBLIC_POST = 1;
 

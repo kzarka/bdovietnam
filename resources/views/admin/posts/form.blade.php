@@ -50,6 +50,10 @@ if(!$isNew) $route = 'admin_edit_post';
                     <label>Thumbnail</label>
                     <input type="text" name="thumbnail" class="form-control" value="{{ $post->thumbnail }}" placeholder="Thumbnail"/>
                 </div>
+                <div class="form-group">
+                    <label>Top Image</label>
+                    <input type="text" name="top_image" class="form-control" value="{{ $post->top_image }}" placeholder="Top Image"/>
+                </div>
             	<div class="form-group">
                   	<label>Content</label>
                   	<textarea class="ckeditor form-control" rows="4" placeholder="Enter ..." name="content">{{ $post->content }}</textarea>
