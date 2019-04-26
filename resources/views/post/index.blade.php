@@ -5,6 +5,8 @@
 @section('title', isset($post->id) ? $post->title : 'Post not found' )
 
 @section('content')
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v3.2&appId=2310549515889879&autoLogAppEvents=1"></script>
 <div class="single-post-wrap">
     @if (isset($post->id))
     @if ($post->top_image)
@@ -115,7 +117,8 @@
         </div> -->
     </div>
     <div class="comment-form">
-        <h4>Post Comment</h4>
+        <div class="fb-comments" data-href="{{ Request::url() }}" data-width="" data-numposts="5"></div>
+        <!-- <h4>Post Comment</h4>
         <form>
             <div class="form-group form-inline">
                 <div class="form-group col-lg-6 col-md-12 name">
@@ -132,7 +135,7 @@
                 <textarea class="form-control mb-10" rows="5" name="message" placeholder="Messege" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Messege'" required=""></textarea>
             </div>
             <a href="#" class="primary-btn text-uppercase">Post Comment</a>
-        </form>
+        </form> -->
     </div>
     @endif
 </div>
