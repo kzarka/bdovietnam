@@ -23,3 +23,5 @@ Route::get('categories/load_parent', 'Api\CategoriesController@loadParents')->na
 
 Route::post('posts/load', 'Api\PostsController@load')->name('posts_load_api');
 
+Route::post('tips/load', 'Api\TipsController@load')->name('tips_load_api');
+

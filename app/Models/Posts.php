@@ -3,10 +3,12 @@
 namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use App\User;
 
 class Posts extends Model
 {
+    use SoftDeletes;
     /**
      * The table associated with the model.
      *

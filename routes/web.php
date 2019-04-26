@@ -71,6 +71,17 @@ Route::namespace('Admin')->prefix('admin')->middleware('auth', 'check.admin')->g
 
 	Route::delete('posts/delete/{id}', 'PostsController@delete')->name('admin_post_delete');
 
+	//tips
+	Route::get('/tips/list', 'TipsController@index')->name('admin_tips');
+
+	Route::post('/tips/create', 'TipsController@create')->name('admin_tip_create');
+
+	Route::POST('/tips/load', 'TipsController@load')->name('admin_tip_load');
+
+	Route::post('/tips/update/{id}', 'TipsController@update')->name('admin_tip_update');
+
+	Route::delete('/tips/delete/{id}', 'TipsController@delete')->name('admin_tip_delete');
+
 	// boss
 
 	Route::match(['get', 'post'], '/bosses', 'BossController@index')->name('admin_bosses');

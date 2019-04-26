@@ -59,14 +59,14 @@ class CategoriesController extends Controller
 
     public function delete($id)
     {
-        $class = Categories::find($id);
-        if(!$class) {
+        $category = Categories::find($id);
+        if(!$category) {
 
             return 'false';
         }
         Categories::where('parent_id', id)
           ->update(['parent_id' => 0]);
-        $class->delete();
+        $category->delete();
 
         return 'true';
     }

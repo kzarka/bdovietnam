@@ -18,6 +18,13 @@
             @endif
                 <a href="{{ route('admin_categories') }}"><i class="fa fa-dashboard"></i> <span> Category</span></a>
             </li>
+            @if (strstr($currentUrl, 'tips') === false)
+            <li>
+            @else
+            <li class="active">
+            @endif
+                <a href="{{ route('admin_tips') }}"><i class="fa fa-dashboard"></i> <span> Tips</span></a>
+            </li>
             @if (strstr($currentUrl, 'classes') === false)
             <li class="treeview">
             @else
