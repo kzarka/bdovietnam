@@ -207,3 +207,7 @@ b, strong {
     max-width: 1340px;
   }
 }
+
+.logo-top {
+    height: 100px;
+}
